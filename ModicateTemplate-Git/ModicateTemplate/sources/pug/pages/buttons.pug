@@ -1,0 +1,75 @@
+extends ../_default
+
+block vars
+	- var active = "Elements"
+	- var title = "Buttons"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "Choose your Size, Style & Color"
+	-var header_small = "Buttons"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	ol.breadcrumb.section-border
+		li: a(href="index.html") Home
+		li: a(href="#") Elements
+		li.active Buttons
+
+	section.text-center.well.well-sm
+		.container
+			.row.justify-content-center
+				.col-xl-6.col-xl-offset-3
+					h1.font-weight-bold Buttons
+					p.lead.
+						Easily insert buttons and call-to-actions in any page, use amazing custom options to spice up your pages.
+	section.text-center.well.well-sm.section-border
+		.container
+			h5.font-weight-bold.text-center Button Sizes
+				small 4 different sizes: super, large, default and small.
+			.row.justify-content-center
+				.col-12.group
+					a(href='#').button.button-primary.button-lg.round-small Super size
+					a(href='#').button.button-primary.round-small Large size
+					a(href='#').button.button-primary.button-sm.round-small Base size
+					a(href='#').button.button-primary.button-xs.round-small Small size
+	section.text-center.well.well-sm.section-border
+		.container
+			h5.font-weight-bold.text-center Button Shapes
+				small 4 different shapes: default, round, square and circle.
+			.row.justify-content-center
+				.col-12.group
+					a(href='#').button.button-primary.button-sm.round-small default
+					a(href='#').button.button-primary.button-sm.round-large round
+					a(href='#').button.button-primary.button-sm square
+					a(href='#').button.button-primary.button-sm.round-xl circle
+	section.text-center.well.well-sm.section-border
+		.container
+			h5.font-weight-bold.text-center Buttons with Icons
+				small Buttons are fully integrated with 900+ icons.
+			.row.justify-content-center
+				.col-12.group
+					a(href='#').button.button-primary.button-sm.round-small.button-icon-right icon right #[span.icon.fa-search]
+					a(href='#').button.button-primary.button-sm.round-small.button-icon-left #[span.icon.fa-heart] icon left
+					a(href='#').button.button-default.button-sm.round-small.button-icon-right icon right #[span.icon.fa-search]
+					a(href='#').button.button-default.button-sm.round-small.button-icon-left #[span.icon.fa-heart] icon left
+	section.text-center.well.well-sm
+		.container
+			h5.font-weight-bold.text-center Button with Shadow
+				small Enhance your button with a shadow effect.
+			.row.justify-content-center
+				.col-12.group
+					a(href='#').button.button-primary.button-sm.round-xl.button-shadow Shadow
+					a(href='#').button.button-default.button-sm.round-xl.button-shadow Shadow
+
+
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

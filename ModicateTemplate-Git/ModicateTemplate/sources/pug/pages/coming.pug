@@ -1,0 +1,52 @@
+extends ../_default
+include ../_mixins
+include ../components/countdown
+
+
+block vars
+	- var active = "Extras"
+	- var title = "Coming soon"
+	- var header_class = "bg-image bg-image-2"
+
+block head
+
+block header
+	header(class=header_class)
+		-var  rd_navbar_class_ajuster = "top-panel-none-items"
+		-var  rd_navbar_data_ajuster = {'data-layout': 'rd-navbar-fixed', 'data-sm-layout': 'rd-navbar-fixed', 'data-md-layout': 'rd-navbar-fixed', 'data-md-device-layout':'rd-navbar-fixed', 'data-lg-layout': 'rd-navbar-fixed', 'data-lg-device-layout': 'rd-navbar-fixed', 'data-xl-layout': 'rd-navbar-static', 'data-xl-device-layout':'rd-navbar-static', 'data-lg-stick-up-offset': '46px', 'data-xl-stick-up-offset': '46px', 'data-xxl-stick-up-offset':'46px', 'data-lg-stick-up':  'true', 'data-xl-stick-up':  'true', 'data-xxl-stick-up': 'true'}
+		include ../navbar
+
+
+
+		= '\n'
+		//Start section
+		section.well-xl.text-center.user-info-section.context-dark
+			.container
+				.row.justify-content-center
+					.col-12
+						h1.text-uppercase.text-white Coming soon
+					.col-lg-8.well.well-sm
+						+countdown({ to: '2019-10-01' })
+						//#DateCountdown(data-date="2019-10-01 00:00:00").DateCountdown.text-white
+					.col-12
+						form.rd-mailform.subscribe-form.form-width-2.text-white( data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php' )
+							.form-wrap.form-wrap-validation
+								input#forms-news-email.form-input.bg-rgba( type="email" name="email" placeholder="Name@domainname.com" data-constraints='@Required' )
+							.button-wrap.text-center
+								button(type="submit").button.button-primary.button-xs.round-xl Be the 1st to know
+
+		//End section
+
+block content
+
+
+
+
+
+
+
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

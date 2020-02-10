@@ -1,0 +1,147 @@
+extends ../_default
+include ../_mixins
+include ../components/_ui-pagination
+
+block vars
+	- var active = "Blog"
+	- var title = "Archive page"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "Our Latest News"
+	-var header_small = "Blog"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	ol.breadcrumb.section-border
+		li: a(href="index.html") Home
+		li: a(href="#") Blog
+		li.active: a(href="#") Archive page
+
+
+	= '\n'
+	//Start section
+	section.text-center.text-lg-left.inset-1
+		.container
+			.row.justify-content-between
+				.col-lg-8
+					.row
+						.col-12.section-border
+							article.thumbnail.well.slow-hover
+								.image-slow-wrapper: img(src="images/blog-1.jpg" alt="")
+								.caption
+									h4: a(href="blog_post.html") This is a Standard Post with a Preview Image
+									p.
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
+									.blog-info
+										.pull-md-left
+											time(datetime="2019").meta.fa-calendar Feb 10, 2019
+											.tags.d-inline-block
+												a.badge.fa-tags 
+												a.post-tag.round-xl.small(href='#') General
+												a.post-tag.round-xl.small(href='#') Media
+											a.badge.fa-comments.text-uppercase.font-secondary(href='#') 13
+										a(href="blog_post.html").button-link Read More
+						.col-12.section-border
+							article.thumbnail.well.slow-hover
+								.image-slow-wrapper: img(src="images/blog-1.jpg" alt="")
+								.caption
+									h4: a(href="blog_post.html") This is a Standard Post with a Preview Image
+									p.
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
+									.blog-info
+										.pull-md-left
+											time(datetime="2019").meta.fa-calendar Feb 10, 2019
+											.tags.d-inline-block
+												a.badge.fa-tags 
+												a.post-tag.round-xl.small(href='#') General
+												a.post-tag.round-xl.small(href='#') Media
+											a.badge.fa-comments.text-uppercase.font-secondary(href='#') 13
+										a(href="blog_post.html").button-link Read More
+						.col-12.section-border
+							article.thumbnail.well.slow-hover
+								.image-slow-wrapper: img(src="images/blog-1.jpg" alt="")
+								.caption
+									h4: a(href="blog_post.html") This is a Standard Post with a Preview Image
+									p.
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
+									.blog-info
+										.pull-md-left
+											time(datetime="2019").meta.fa-calendar Feb 10, 2019
+											.tags.d-inline-block
+												span.badge.fa-tags 
+												a.post-tag.round-xl.small(href='#') General
+												a.post-tag.round-xl.small(href='#') Media
+											a.badge.fa-comments.text-uppercase.font-secondary(href='#') 13
+										a(href="blog_post.html").button-link Read More
+						.col-12.section-border
+							article.thumbnail.well.slow-hover
+								.image-slow-wrapper: img(src="images/blog-1.jpg" alt="")
+								.caption
+									h4: a(href="blog_post.html") This is a Standard Post with a Preview Image
+									p.
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
+									.blog-info
+										.pull-md-left
+											time(datetime="2019").meta.fa-calendar Feb 10, 2019
+											.tags.d-inline-block
+												a.badge.fa-tags 
+												a.post-tag.round-xl.small(href='#') General
+												a.post-tag.round-xl.small(href='#') Media
+											a.badge.fa-comments.text-uppercase.font-secondary(href='#') 13
+										a(href="blog_post.html").button-link Read More
+										
+						.col-12
+							.d-flex.justify-content-center.well
+								+pagination-bootstrap('',1,5)
+
+				.col-lg-3.col-lg-offset-1.inset-md.sidebar.inset-1
+					h5 Archive
+					ul.list-unstyled-2
+						li: a.text-primary(href='#') 2019
+						li: a.text-primary(href='#') 2017
+						li: a.text-primary(href='#') 2016
+						li: a.text-primary(href='#') 2015
+						li: a.text-primary(href='#') 2014
+					h5 Latest Projects
+					.img-box
+						a(href='#'): img(src='images/sidebar-2.jpg' alt='')
+						a(href='#'): img(src='images/sidebar-3.jpg' alt='')
+						a(href='#'): img(src='images/sidebar-4.jpg' alt='')
+						a(href='#'): img(src='images/sidebar-5.jpg' alt='')
+						a(href='#'): img(src='images/sidebar-6.jpg' alt='')
+						a(href='#'): img(src='images/sidebar-7.jpg' alt='')
+
+					h5 Latest News
+					ul.list-unstyled-2
+						li: a.text-primary(href='#') Trends in UX Design
+						li: a.text-primary(href='#') The little Person inside
+						li: a.text-primary(href='#') Inspirational Quote
+						li: a.text-primary(href='#') The Exploration
+						li: a.text-primary(href='#') Places to get lost
+
+					h5 Sponsor Widgets
+					.img-box
+						a(href='#'): img(src='images/sidebar-8.jpg' alt='')
+						a(href='#'): img(src='images/sidebar-8.jpg' alt='')
+						a(href='#'): img(src='images/sidebar-8.jpg' alt='')
+						a(href='#'): img(src='images/sidebar-8.jpg' alt='')
+
+		//End section
+
+	= '\n'
+	//Start section
+	section.well.text-center.text-lg-left
+		.container
+			
+	//End section
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

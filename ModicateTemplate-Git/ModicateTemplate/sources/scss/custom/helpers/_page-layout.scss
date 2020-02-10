@@ -1,0 +1,450 @@
+/*
+* Page layout
+*/
+
+// Page
+.page {
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+	//opacity: 0;
+
+	&.fadeIn { animation-timing-function: ease-out; }
+	&.fadeOut { animation-timing-function: ease-in; }
+
+	[data-x-mode] & {
+		opacity: 1;
+	}
+}
+
+// Boxed Layout 
+html.boxed {
+	body {
+		background: $page-boxed-background-color $page-boxed-background-image repeat fixed;
+	}
+
+	@media (min-width: $page-boxed-width + $grid-gutter-width) {
+		.page {
+			max-width: $page-boxed-width;
+			margin-left: auto;
+			margin-right: auto;
+			box-shadow: 0 0 23px 0 rgba(1, 1, 1, 0.1);
+		}
+
+		.rd-navbar-static {
+			max-width: $page-boxed-width;
+			margin-left: auto;
+			margin-right: auto;
+
+			&.rd-navbar--is-stuck {
+				max-width: $page-boxed-width;
+				width: 100%;
+				left: calc(50% - #{$page-boxed-width});
+				right: calc(50% - #{$page-boxed-width});
+			}
+		}
+	}
+}
+
+
+
+/*
+* @section      Page Footer
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page footer
+*/
+
+.page-footer {
+	border-top: 1px solid #ebebeb;
+
+	h6 {
+		font-size: 18px;
+		line-height: 24px;
+		color: #343842;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		margin-bottom: 26px;
+	}
+
+	.list-inline {
+		> li {
+			border: none;
+			font-size: 20px;
+			@media (min-width: 1200px) {
+				font-size: 24px;
+			}
+			a {
+				color: #e1e1e1;
+				&:hover {
+					color: $brand-primary;
+				}
+			}
+		}
+	}
+
+	.group + p {
+		margin-top: 48px;
+	}
+
+	.navbar-brand {
+		a {
+			color: $navbar-default-brand-color;
+		}
+	}
+
+	.copyright {
+		background: $gray-lighter;
+		padding-top: 18px;
+		padding-bottom: 24px;
+		font-size: 13px;
+		letter-spacing: 0.02em;
+		* {
+			color: $gray-light;
+		}
+		a {
+			white-space: nowrap;
+			&:hover {
+				color: $brand-primary;
+			}
+		}
+	}
+
+	&.dark {
+		.copyright {
+			background: #202538;
+			* {
+				color: #4e5673;
+			}
+			a {
+				&:hover {
+					color: $white-clr;
+				}
+			}
+		}
+		.footer-content {
+			background: #2d344d;
+			.navbar-brand {
+				a {
+					color: $white-clr;
+				}
+			}
+			.list-inline-2 {
+				li a {
+					color: $white-clr;
+					&:hover{
+						color: $primary;
+					}
+				}
+			}
+		}
+		h6 {
+			color: $white-clr;
+		}
+	}
+
+	/*
+	* @section      Footer centered
+	* @description  This section holds specific style redeclarations for some
+	*               of common elements in page footer
+	*/
+
+	&.footer-centered {
+		.footer-content {
+			padding-top: 34px;
+			padding-bottom: 54px;
+
+			.list-inline {
+				margin-top: 28px;
+				> li {
+				}
+				@media (min-width: 1200px) {
+					margin-top: 38px;
+				}
+			}
+			.big {
+				font-size: 16px;
+				line-height: 25px;
+				@media (min-width: 1200px) {
+					font-size: 18px;
+				}
+			}
+
+			.navbar-brand {
+				font-size: 45px;
+				line-height: 1.4;
+				@media (min-width: 1200px) {
+					font-size: 60px;
+				}
+			}
+		}
+
+		&.dark {
+			.big {
+				color: #7c8a97;
+			}
+			.list-inline {
+				> li {
+					a {
+						color: #3d455f;
+						&:hover {
+							color: $white-clr;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/*
+	* @section      Footer minimal
+	* @description  This section holds specific style redeclarations for some
+	*               of common elements in page footer
+	*/
+
+	&.footer-minimal {
+		.footer-content {
+			padding-top: 40px;
+			padding-bottom: 23px;
+			.navbar-brand {
+				font-size: 45px;
+				line-height: 1.4;
+				@media (min-width: 1200px) {
+					font-size: 52px;
+				}
+			}
+			.list-inline-2 {
+				margin-top: 25px;
+				@media (max-width: 767px) {
+					display: none;
+				}
+			}
+		}
+		.copyright {
+			padding-bottom: 11px;
+			p {
+				margin-top: 4px;
+			}
+		}
+	}
+
+	/*
+	* @section      Footer widget
+	* @description  This section holds specific style redeclarations for some
+	*               of common elements in page footer
+	*/
+
+	&.footer-widget {
+		.footer-content {
+			padding-top: 40px;
+			padding-bottom: 73px;
+			.navbar-brand {
+				font-size: 45px;
+				line-height: 1.4;
+				margin-bottom: 17px;
+				@media (min-width: 1200px) {
+					font-size: 52px;
+				}
+			}
+
+			.marked-list {
+				max-width: 200px;
+				margin-top: 0;
+				li {
+					&:before {
+						color: $gray-base;
+					}
+					//a:hover {
+					//	color: $gray-base;
+					//}
+				}
+			}
+
+			address {
+				margin-top: 25px;
+			}
+
+			.contact-info {
+				margin-top: 24px;
+				max-width: 180px;
+			}
+
+			article {
+				padding-bottom: 15px;
+				border-bottom: 1px solid #eaeaea;
+				max-width: 270px;
+				margin-top: 0;
+				& + article {
+					margin-top: 34px;
+				}
+				time {
+					font-size: 13px;
+					display: block;
+					margin-top: 3px;
+				}
+			}
+
+			article, .marked-list, .contact-info {
+				@media (max-width: 767px) {
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+
+			.count {
+
+				color: #203040;
+				display: inline-block;
+				font-weight: 700;
+				font-size: 33px;
+				line-height: 1.2;
+				font-family: $font-family-sec;
+				letter-spacing: 0.02em;
+				span {
+					display: block;
+					letter-spacing: 0.22em;
+					font-weight: 400;
+					line-height: 24px;
+					font-size: 11px;
+					text-transform: uppercase;
+					color: #898889;
+				}
+
+				@include media-breakpoint-up(xl) {
+					margin-top: 0px;
+				}
+			}
+
+			form {
+				position: relative;
+				margin-top: 18px;
+				text-align: center;
+				// Medium ≥768px
+				@include media-breakpoint-up(md) {
+					text-align: left; 
+				}
+
+				label {
+					display: block;
+				}
+				input {
+					@media (min-width: 1200px) {
+						padding-right: 160px;
+					}
+				}
+				button {
+					//margin-top: 0px;
+					@media (min-width: 1200px) {
+						margin-top: 0;
+						padding: 11px 14px;
+						position: absolute;
+						max-width: 150px;
+						right: 0;
+						top: 50%;
+						@include transform(translateY(-50%));
+					}
+				}
+				.form-validation { text-align: left; }
+			}
+			.socials {
+				a {
+					text-align: left;
+					position: relative;
+					display: inline-block;
+					font-size: 28px;
+					color: $brand-info;
+					&:after {
+						content: 'Like us on Facebok';
+						width: 84px;
+						font-size: 12px;
+						line-height: 16px;
+						padding-left: 17px;
+						color: $body-color;
+						display: inline-block;
+					}
+				}
+				a.fa-rss {
+					color: #f69105;
+					margin-left: 57px;
+					&:after {
+						content: 'Subscribe to RSS Feeds';
+					}
+				}
+
+				a:hover {
+					color: $brand-success;
+				}
+
+				* + & {
+					margin-top: 27px;
+				}
+			}
+		}
+
+		.copyright {
+			padding-bottom: 11px;
+			p {
+				margin-top: 4px;
+			}
+		}
+		&.dark {
+			.footer-content {
+				p {
+					color: $gray-light;
+				}
+				address {
+					p.text-light-clr {
+						color: #4e5673;
+					}
+					color: $gray-light;
+				}
+				.contact-info {
+					dl {
+						dt {
+							color: #4e5673;
+						}
+						dd {
+							color: $gray-light;
+						}
+					}
+				}
+				article {
+					border-bottom-color: #333c5c;
+					p {
+						color: $brand-primary;
+					}
+					time {
+						color: #4e5673;
+					}
+				}
+				.count {
+					color: $white-clr;
+					span {
+						color: $gray-light;
+					}
+				}
+				.socials {
+					a:after {
+						color: $gray-light;
+					}
+					a:hover {
+						color: $white-clr;
+					}
+				}
+				.marked-list {
+					> li {
+						a:hover {
+							color: $white-clr;
+						}
+						&:before {
+							color: $brand-primary;
+						}
+					}
+				}
+			}
+			a:hover {
+				color: $white-clr;
+			}
+		}
+	}
+
+}

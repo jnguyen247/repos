@@ -1,0 +1,25 @@
+extends ../_default
+
+block vars
+	- var active = "Features"
+	- var title = "Home"
+	- var header_class = "page-header"
+
+block head
+
+block header
+
+	-var header_h1 = "You Can Create Landing Pages"
+	-var header_small = "With 120 Carts In 12 Categories"
+	-var header_big = "We create quality products <br> tailored to your needs and requirements."
+	-var header_content = "<div class='button-group-variant'> <a class='button button-primary button-shadow round-xl button-sm' href='#'>Buy A Theme</a> <a class='button button-default round-xl button-sm' href='#'>View Features</a></div>"
+
+	include ../includes/_header_parallax
+
+block content
+
+	include ../includes/_main-content
+		
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

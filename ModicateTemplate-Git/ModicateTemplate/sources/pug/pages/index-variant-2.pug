@@ -1,0 +1,133 @@
+extends ../_default
+
+block vars
+	- var active = "Pages"
+	- var title = "Home Variant 2"
+	- var header_class = "bg-image bg-image-2"
+
+block head
+
+block header
+	header(class=header_class)
+		-var  rd_navbar_class_ajuster = "top-panel-none-items"
+		-var  rd_navbar_data_ajuster = {'data-layout': 'rd-navbar-fixed', 'data-sm-layout': 'rd-navbar-fixed', 'data-md-layout': 'rd-navbar-fixed', 'data-md-device-layout':'rd-navbar-fixed', 'data-lg-layout': 'rd-navbar-fixed', 'data-lg-device-layout': 'rd-navbar-fixed', 'data-xl-layout': 'rd-navbar-static', 'data-xl-device-layout':'rd-navbar-static', 'data-lg-stick-up-offset': '46px', 'data-xl-stick-up-offset': '46px', 'data-xxl-stick-up-offset':'46px', 'data-lg-stick-up':  'true', 'data-xl-stick-up':  'true', 'data-xxl-stick-up': 'true'}
+		include ../navbar
+		= '\n'
+		//Start section
+		section.well-xl.well-xl-variant-1.context-dark.text-center
+			.container
+				.row.justify-content-center.mb-4.mb-md-0
+					.col-12
+						h1.text-uppercase.text-white Next update
+					.col-lg-8.well-sm-variant-1
+						#DateCountdown(data-date="2017-01-01 00:00:00").DateCountdown.text-white
+
+				form.rd-mailform.subscribe-form( data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php' )
+					.form-wrap.form-wrap-validation
+						input#forms-news-email.form-input( type="email" name="email" placeholder="Enter your e-mail" data-constraints='@Required' )
+					.button-wrap.text-center
+						button(type="submit").button.button-primary.button-xs.round-xl Be Notified
+
+		//End section
+
+block content
+	= '\n'
+	//Start section
+	section.well.well-sm.bg-lighter.relative.text-center
+		.container
+			.row.justify-content-center
+				.col-xl-6.col-xl-offset-3
+					h1.font-weight-bold What We Offer
+					p.lead.
+						We worked out an amazing combination of vast functionality
+						and user's comfort. It will totally impress you with its power!
+			.row.margin-1.text-lg-left.row-50
+				.col-md-6.col-lg-3
+					span.icon.icon-lg.icon-primary.fa-heartbeat
+					h5 Code optimization
+					p.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua. Ut enim!
+				.col-md-6.col-lg-3
+					span.icon.icon-lg.icon-primary.fa-compass
+					h5 Long-term support
+					p.
+						Donec ac odio tempor orci dapibus ultrices. Natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. 
+				.col-md-6.col-lg-3
+					span.icon.icon-lg.icon-primary.fa-edit
+					h5 New homepage layouts
+					p.
+						Erat pellentesque adipiscing commodo elit at imperdiet dui. Lectus proin nibh nisl condimentum id.
+				.col-md-6.col-lg-3
+					span.icon.icon-lg.icon-primary.fa-comments-o
+					h5 New social feeds
+					p.
+						Cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Etiam sit amet nisl purus. Velit laoreet
+	//End section
+
+	= '\n'
+	//Start section
+	section.well.section-border
+		.container
+			.row.justify-content-center
+				.col-md-8.inset-md-min
+					h5.font-weight-bold.text-center Get in Touch
+
+					form.rd-mailform.text-left
+						.row.row-20
+							.col-md-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-name" ) First name
+									input#forms-name.form-input( type="text" name="name" placeholder="Your First Name" data-constraints='@Required' )
+							.col-md-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-email" ) E-mail
+									input#forms-email.form-input( type="email" name="email" placeholder="Enter your e-mail" data-constraints="@Email @Required" )
+							.col-md-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-message" ) Your message
+									textarea#forms-message.form-input( name="message" placeholder="Write your message here" data-constraints="@Required" )
+							.col-md-6
+								.form-wrap.validation-with-outside-label
+									label.form-label-outside(for='pick-up-date') Date
+									input#pick-up-date.form-input(type='text', name='date', data-time-picker='date' placeholder="Date") 
+							.col-md-6.stick-to-bottom
+								button.button.button-primary.button-xs.round-xl.button-block.form-el-offset-1( type="submit" ) Send Message
+					
+	= '\n'
+	
+	//Start section
+	section.well.well-sm.text-center.text-lg-left
+		.container.text-center
+			h1.font-weight-bold Our Gallery
+			// RD Flickr
+			.flickr.flickrfeed.row.row-30.row-xs-center.margin-4(data-lightgallery='group', data-flickr-tags='tm58888_landscapes', data-flickr-tagmode='all')
+				.col-12.col-md-6.col-lg-4
+					div(data-type='flickr-item')
+						a(data-image_b="href" data-lightgallery='item').thumb
+							img(width='640', height='430', data-title='alt', src='images/_blank.png', alt='', data-image_c='src')
+				.col-12.col-md-6.col-lg-4
+					div(data-type='flickr-item')
+						a(data-image_b="href" data-lightgallery='item').thumb
+							img(width='640', height='430', data-title='alt', src='images/_blank.png', alt='', data-image_c='src')
+				.col-12.col-md-6.col-lg-4
+					div(data-type='flickr-item')
+						a(data-image_b="href" data-lightgallery='item').thumb
+							img(width='640', height='430', data-title='alt', src='images/_blank.png', alt='', data-image_c='src')
+				.col-12.col-md-6.col-lg-4
+					div(data-type='flickr-item')
+						a(data-image_b="href" data-lightgallery='item').thumb
+							img(width='640', height='430', data-title='alt', src='images/_blank.png', alt='', data-image_c='src')
+				.col-12.col-md-6.col-lg-4
+					div(data-type='flickr-item')
+						a(data-image_b="href" data-lightgallery='item').thumb
+							img(width='640', height='430', data-title='alt', src='images/_blank.png', alt='', data-image_c='src')
+				.col-12.col-md-6.col-lg-4
+					div(data-type='flickr-item')
+						a(data-image_b="href" data-lightgallery='item').thumb
+							img(width='640', height='430', data-title='alt', src='images/_blank.png', alt='', data-image_c='src')
+							
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered
+

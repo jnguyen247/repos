@@ -1,0 +1,489 @@
+/*========================================================
+                      Contact Form
+=========================================================*/
+$input-height: 50px;
+$form-input-color: $gray-light;
+$form-input-color-placeholder: $form-input-color;
+$form-input-background: $gray-lighter;
+$form-input-border-color: 1px solid $form-input-background;
+$form-input-border-color-radius: 30px;
+$form-input-font-size: 14px;
+$input-line-height: 24px;
+$input-font-weight: 400;
+$input-padding-vertical: ( $input-height - $input-line-height - nth($form-input-border-color,1)*2 ) / 2;
+$input-padding-horizontal: 25px;
+$error-color: #d9534f;
+$success-color: #5cb85c;
+
+.rd-mailform {
+	position: relative;
+	text-align: left;
+	padding: 10px 5px;
+
+	.stick-to-bottom {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: stretch;
+
+		* + .form-wrap {
+			margin-top: 0;
+		}
+	}
+
+	.align-center {
+		display: flex;
+		align-items: center;
+	}
+
+	.card-box {
+		position: relative;
+		padding: 20px 10px;
+
+		&:after {
+			content: '\f023';
+			position: absolute;
+			top: 12px;
+			right: 12px;
+			font-family: $fa;
+			font-size: 18px;
+			line-height: 1;
+			color: $gray;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding: 33px;
+		}
+	}
+
+	* + .button {
+		margin-top: 10px;
+	}
+	* + .form-wrap {
+		margin-top: 10px;
+	}
+	* + .button-wrap {
+		margin-top: 36px;
+	}
+	.form-label-outside + .form-input {
+		margin-top: 4px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		//* + .button { margin-top: 50px; }
+		* + .form-wrap {
+			margin-top: 19px;
+		}
+		.divider-word + .form-wrap {
+			margin-top: 21px;
+		}
+	}
+}
+
+.form-input {
+	display: block;
+	width: 100%;
+	height: $input-height;
+	padding: $input-padding-vertical $input-padding-horizontal;
+	font-size: $form-input-font-size;
+	font-weight: $input-font-weight;
+	line-height: $input-line-height;
+	color: $form-input-color;
+	background-color: $form-input-background;
+	background-image: none;
+	border: $form-input-border-color;
+	border-radius: $form-input-border-color-radius;
+	-webkit-appearance: none;
+	transition: .3s ease-in-out;
+
+	&:focus {
+		outline: 0;
+		box-shadow: 0 1px 13px rgba($brand-primary, 0.4);
+		background-color: $white-clr;
+	}
+
+	&::-moz-placeholder {
+		color: $form-input-color-placeholder;
+	}
+	&::-webkit-input-placeholder {
+		color: $form-input-color-placeholder;
+	}
+	&:-ms-input-placeholder {
+		color: $form-input-color-placeholder;
+	}
+	&::-ms-input-placeholder {
+		color: $form-input-color-placeholder;
+	}
+	&::placeholder {
+		color: $form-input-color-placeholder;
+	}
+}
+
+textarea.form-input {
+	height: 100px;
+	min-height: 50px;
+	max-height: 200px;
+	resize: vertical;
+}
+
+// Form wrapper
+// -------------------------
+
+.form-wrap {
+	position: relative;
+}
+
+// Form labels
+// -------------------------
+
+.form-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9;
+	margin: 0;
+	padding: $input-padding-vertical $input-padding-horizontal;
+	font-size: $form-input-font-size;
+	font-weight: $input-font-weight;
+	line-height: $input-line-height;
+	pointer-events: none;
+	transition: .3s;
+	color: $form-input-color-placeholder;
+
+	&.focus {
+		opacity: 0;
+	}
+	&.auto-fill {
+		color: $form-input-color;
+	}
+}
+
+.form-label-outside {
+	display: block;
+	margin: 0 $input-padding-horizontal;
+	font-family: $font-family-sec;
+	color: $form-input-color-placeholder;
+	font-weight: 700;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-transform: uppercase;
+
+	@include media-breakpoint-up(md) {
+		position: static;
+	}
+}
+
+// Form validation
+// -------------------------
+
+.form-validation {
+	position: absolute;
+	top: 2px;
+	left: $input-padding-horizontal;
+	right: 16px;
+	z-index: 11;
+	text-align: right;
+	font-size: 11px;
+	line-height: 11px;
+	transition: .3s;
+	color: $error-color;
+}
+
+.validation-with-outside-label {
+	.form-validation {
+		top: $font-size-base * $line-height-base + 7px;
+	}
+}
+
+.form-validation-left {
+	.form-validation {
+		top: 100%;
+		left: 0;
+		right: auto;
+	}
+}
+
+// Radio and Checkbox Custom
+// -------------------------
+
+// Base Styles
+.radio .radio-custom,
+.radio-inline .radio-custom,
+.checkbox .checkbox-custom,
+.checkbox-inline .checkbox-custom {
+	opacity: 0;
+
+	&, &-dummy {
+		position: absolute;
+		top: 4px;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		outline: none;
+		cursor: pointer;
+	}
+
+	&-dummy {
+		pointer-events: none;
+		background: $form-input-background;
+
+		&:after {
+			position: absolute;
+			opacity: 0;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.radio-inline,
+.checkbox-inline {
+	padding-left: 25px;
+	font-weight: 300;
+	cursor: pointer;
+
+	.heading {
+		font-family: $font-family-sec;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+}
+
+.radio-custom:checked + .radio-custom-dummy:after,
+.checkbox-custom:checked + .checkbox-custom-dummy:after {
+	opacity: 1;
+}
+
+// Custom Radio Styles
+.radio,
+.radio-inline {
+	input[type="radio"] {
+		margin: auto;
+	}
+
+	.radio-custom-dummy {
+		border-radius: 50%;
+		box-shadow: inset 0 2px 2px 0 rgba($gray-darker, .16);
+
+		&:after {
+			content: '';
+			top: 4px;
+			bottom: 4px;
+			left: 4px;
+			right: 4px;
+			background: $primary;
+			border-radius: 50%;
+		}
+	}
+}
+
+// Custom Checkbox Styles
+.checkbox,
+.checkbox-inline {
+	input[type="checkbox"] {
+		margin: auto;
+	}
+
+	.checkbox-custom-dummy {
+		pointer-events: none;
+		border-radius: 3px;
+		margin-left: 0;
+		left: 0;
+
+		&:after {
+			content: '\f00c';
+			font-family: 'FontAwesome';
+			font-size: 16px;
+			line-height: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: $primary;
+		}
+	}
+}
+
+.block-inline-left + * {
+	margin-left: 10px;
+}
+
+// Subscribe form
+// -------------------------
+
+.subscribe-form {
+	display: inline-flex;
+	flex-wrap: wrap;
+	max-width: 680px;
+	width: 100%;
+
+	.button-wrap,
+	.form-wrap {
+		flex-basis: 100%;
+		flex-grow: 1;
+	}
+
+	.button {
+		width: 100%;
+	}
+
+	* + .button-wrap {
+		margin-top: 10px;
+	}
+
+	@include media-breakpoint-up(sm) {
+		flex-wrap: nowrap;
+
+		.form-wrap {
+			flex-shrink: 1;
+			flex-grow: 0;
+		}
+
+		.button-wrap {
+			flex-basis: 38%;
+			flex-shrink: 0;
+			flex-grow: 0;
+			margin-top: 0;
+			margin-left: 30px;
+
+			.ie-11 &,
+			.ie-edge & {
+				min-width: 245px;
+			}
+		}
+	}
+}
+
+// ReCaptcha
+.recaptcha {
+	div {
+		display: block;
+		transform-origin: 0 0;
+	}
+
+	iframe {
+		display: block;
+	}
+}
+
+.form-wrap-recaptcha {
+	.form-validation {
+		left: 15px;
+		text-align: left;
+	}
+}
+
+.recaptcha-validation {
+	.form-validation {
+		left: 15px;
+		right: 15px;
+		top: 10px;
+		text-align: left;
+
+		@include media-breakpoint-up(sm) {
+			top: 2px;
+		}
+	}
+
+}
+
+// Form output
+// -------------------------
+
+#form-output-global {
+	position: fixed;
+	bottom: 30px;
+	left: 15px;
+	transform: translateX(-500px);
+	z-index: 9999999;
+	font-size: 14px;
+	transition: .3s all ease;
+	visibility: hidden;
+
+	&.active {
+		transform: translateX(0);
+		visibility: visible;
+	}
+
+	@include media-breakpoint-up(sm) {
+		left: 30px;
+	}
+}
+
+.form-output {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	font-size: 14px;
+	line-height: 1.5;
+	margin-top: 2px;
+	transition: .3s;
+	opacity: 0;
+	visibility: hidden;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.error {
+		color: $error-color;
+	}
+
+	&.success {
+		color: $success-color;
+	}
+}
+
+/*
+*
+* Snackbars
+* --------------------------------------------------
+*/
+
+.snackbars {
+	max-width: 280px;
+	padding: 9px 16px;
+	margin-left: auto;
+	margin-right: auto;
+	color: $white-clr;
+	text-align: left;
+	background-color: $gray-dark;
+	border-radius: 0;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+	font-size: 14px;
+
+	.icon-xxs {
+		font-size: 18px;
+	}
+
+	// padding on text
+	p span:last-child {
+		padding-left: 14px;
+	}
+
+	// snackbar icon on the left side
+	&-left {
+		display: inline-block;
+		margin-bottom: 0;
+	}
+
+	// snackbar link or button on the right side
+	&-right {
+		display: inline-block;
+		float: right;
+		text-transform: uppercase;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		max-width: 380px;
+		padding: 12px 15px;
+		font-size: 16px;
+	}
+}

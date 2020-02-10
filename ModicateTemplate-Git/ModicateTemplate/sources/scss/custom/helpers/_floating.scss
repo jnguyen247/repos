@@ -1,0 +1,45 @@
+/*
+* @subsection   Floating System
+*/
+
+.pull-left {
+  float: left;
+}
+
+.pull-none {
+  float: none;
+}
+
+.pull-right {
+  float: right;
+}
+
+@mixin make-floating($resolution){
+  .pull-#{$resolution}-left {
+    float: left;
+  }
+
+  .pull-#{$resolution}-none {
+    float: none;
+  }
+
+  .pull-#{$resolution}-right {
+    float: right;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  @include make-floating("xs");
+}
+
+@include media-breakpoint-up(md) {
+  @include make-floating("sm");
+}
+
+@include media-breakpoint-up(lg) {
+  @include make-floating("md");
+}
+
+@include media-breakpoint-up(xl) {
+  @include make-floating("lg");
+}

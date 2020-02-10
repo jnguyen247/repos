@@ -1,0 +1,97 @@
+extends ../_default
+include ../components/_ui-progress-linear
+include ../components/progress-circle
+
+
+block vars
+	- var active = "Elements"
+	- var title = "Progress bars"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "Choose your Size, Style & Color"
+	-var header_small = "PROGRESSBARS, SKILLSBARS, COUNTERS & PIE CHARTS"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	ol.breadcrumb.section-border
+		li: a(href="index.html") Home
+		li: a(href="#") Elements
+		li.active Progress Bar
+
+	section.text-center.well.well-sm
+		.container
+			.row.justify-content-center
+				.col-xl-10.col-xl-offset-1
+					h1.font-weight-bold Progress Bars, Skills Bars, Counters
+					p.lead.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus molestias nam nobis adipisicing elit. Assumenda deleniti
+	section.well.well-inset
+		.container
+			.row.justify-content-between.row-30
+				.col-md-6.col-lg-6.col-xl-5
+					+progress-linear({
+						title: 'photoshop',
+						value: '75'
+					})
+
+					+progress-linear({
+						title: 'php',
+						value: '85'
+					})
+
+					+progress-linear({
+						title: 'marketing',
+						value: '80'
+					})
+					
+					+progress-linear({
+						title: 'html & css',
+						value: '80'
+					})
+					
+	
+				.col-md-6.col-lg-6.col-xl-5.col-xl-offset-1.text-center.text-lg-left
+					h5.font-weight-bold Emphasize with different Colors
+	
+					p.
+						Egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. <br><br>
+																Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna. Excepteur sint occaecat cupidatat.
+
+
+	
+	include ../includes/_counter-1
+					
+	section.text-center.well
+		.container
+			.row.justify-content-center
+				.col-6.col-md-6.col-lg-3.inset-vw
+					+progress-circle({
+						title: 'photoshop',
+						value: 73
+					})
+				.col-6.col-md-6.col-lg-3.inset-vw
+					+progress-circle({
+						title: 'php',
+						value: 11
+					})
+				.col-6.col-md-6.col-lg-3.inset-vw
+					+progress-circle({
+						title: 'html & css',
+						value: 13
+					})
+				.col-6.col-md-6.col-lg-3.inset-vw
+					+progress-circle({
+						title: 'marketing',
+						value: 59
+					})
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

@@ -1,0 +1,20 @@
+/*
+* Contexts
+*/
+
+%context-dark {
+	&,
+	#{headings()} {
+		color: $white;
+	}
+}
+
+%context-light {
+	color: $body-color;
+
+	#{headings()} {
+		color: $headings-color;
+	}
+}
+
+

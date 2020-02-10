@@ -1,0 +1,17 @@
+.breadcrumb {
+	justify-content: center;
+	padding: 22px 15px;
+	margin-bottom: 0;
+	list-style: none;
+	background-color: transparent;
+
+	.active {
+		color: #a7b0b4;
+	}
+
+	> li + li:before {
+		content: "/ ";
+		padding: 0 17px;
+		color: #ccc;
+	}
+}

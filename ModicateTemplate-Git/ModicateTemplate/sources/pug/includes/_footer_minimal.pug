@@ -1,0 +1,29 @@
+//-var footer_class = "page-footer text-center"
+
+- var footer_menu = ["Home", "Pages", "Features","Extras","Elements","Blog", "Gallery", "Shop"]
+
+footer(class=footer_class)
+	section.footer-content
+		.container
+			.d-flex.justify-content-center.align-items-center.justify-content-xl-between.flex-md-column.flex-xl-row
+				.navbar-brand
+					a(href="index.html") Modicate
+				ul.list-inline-2
+					each val in footer_menu
+						li.list-inline-item: a(href="#")=val
+
+
+	section.copyright
+		.container
+			.d-flex.justify-content-center.justify-content-md-between.align-items-center.flex-wrap.flex-md-nowrap.flex-md-row-reverse
+				ul.list-inline
+					li.list-inline-item: a.fa-facebook(href="#")
+					li.list-inline-item: a.fa-pinterest-p(href="#")
+					li.list-inline-item: a.fa-twitter(href="#")
+					li.list-inline-item: a.fa-google-plus(href="#")
+					li.list-inline-item: a.fa-instagram(href="#")
+					
+				p &#169; #[span.copyright-year] All Rights Reserved #[a(href='terms.html') Terms of Use and Privacy Policy]
+					| . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+

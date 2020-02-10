@@ -1,0 +1,145 @@
+extends ../_default
+include ../_mixins
+include ../components/_ui-pagination
+
+
+block vars
+	- var active = "Blog"
+	- var title = "Default blog"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "Our Latest News"
+	-var header_small = "Blog"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	section.section-border.text-center.text-lg-left
+		.container
+			ol.breadcrumb
+				li: a(href="index.html") Home
+				li: a(href="#") Blog
+				li.active: a(href="#") Default blog
+
+	= '\n'
+	//Start section
+	section.text-center.text-lg-left.margin-1
+		.container
+			.row
+				.col-12.section-border
+					article.thumbnail.well
+						img(src="images/blog-1.jpg" alt="")
+						.caption
+							h4: a(href="blog_post.html") This is a Standard Post with a Preview Image
+							p.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
+							.blog-info
+								.pull-md-left
+									time(datetime="2019").meta.fa-calendar Feb 10, 2019
+									a.badge.fa-user.text-uppercase.font-secondary(href='#') Admin
+									.tags.d-inline-block
+										span.badge.fa-tags 
+										a.post-tag.round-xl.small(href='#') General
+										a.post-tag.round-xl.small(href='#') Media
+									a.badge.fa-comments.text-uppercase.font-secondary(href='#') 13 comments
+								a(href="blog_post.html").button-link Read More
+
+
+				= '\n'
+				//Start section video
+
+				.col-12.section-border
+					article.well
+						//16:9 aspect ratio
+						.embed-responsive.embed-responsive-16by9
+							iframe.embed-responsive-item(src="https://www.youtube.com/embed/FyduD9nQFiM?wmode=transparent"  allowfullscreen)
+
+						h4: a(href="blog_post.html") This is a Standard Post with an Embedded Video
+						p.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
+						.blog-info
+							.pull-md-left
+								time(datetime="2019").meta.fa-calendar Feb 10, 2019
+								a.badge.fa-user.text-uppercase.font-secondary(href='#') Admin
+								.tags.d-inline-block 
+									span.badge.fa-tags 
+									a.post-tag.round-xl.small(href='#') General
+									a.post-tag.round-xl.small(href='#') Media
+								a.badge.fa-comments.text-uppercase.font-secondary(href='#') 13 comments
+							a(href="blog_post.html").button-link Read More
+
+				//End video
+
+
+				= '\n'
+				//Start section slider
+
+				.col-12.section-border
+					article.well
+						//Swiper
+						.swiper-container.swiper-slider.swiper-blog(data-autoplay="5000" data-slide-effect="fade" data-loop="false")
+							.swiper-wrapper
+								.swiper-slide(data-slide-bg="images/blog-1.jpg")
+									.swiper-slide-caption
+
+								.swiper-slide(data-slide-bg="images/blog-2.jpg")
+									.swiper-slide-caption
+
+						h4: a(href="blog_post.html") This is a Standard Post with a Slider Gallery
+						p.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
+						.blog-info
+							.pull-md-left
+								time(datetime="2019").meta.fa-calendar Feb 10, 2019
+								a.badge.fa-user.text-uppercase.font-secondary(href='#') Admin
+								.tags.d-inline-block
+									span.badge.fa-tags 
+									a.post-tag.round-xl.small(href='#') General
+									a.post-tag.round-xl.small(href='#') Media
+								a.badge.fa-comments.text-uppercase.font-secondary(href='#') 13 comments
+							a(href="blog_post.html").button-link Read More
+
+				//End slider
+
+				= '\n'
+				//Start quote
+
+				.col-12.section-border
+					article.well
+						blockquote.quote.text-left
+							p.
+								Design is the fundamental soul of a man-made creation that ends up expressing itself in successive outer layers of the product or service. The iMac is not just the color or translucence or the shape of the shell. The essence of the iMac is to be the finest possible consumer computer in which each element plays together.
+							footer
+								cite(title="Source Title") Steve Jobs
+
+						.blog-info
+							.pull-md-left
+								time(datetime="2019").meta.fa-calendar Feb 10, 2019
+								a.badge.fa-user.text-uppercase.font-secondary(href='#') Admin
+								.tags.d-inline-block
+									span.badge.fa-tags 
+									a.post-tag.round-xl.small(href='#') General
+									a.post-tag.round-xl.small(href='#') Media
+								a.badge.fa-comments.text-uppercase.font-secondary(href='#') 13 comments
+							a(href="#").button-link Read More
+
+				//End quote
+
+	= '\n'
+	//Start section
+	section.well.text-center.text-lg-left
+		.container
+			.d-flex.justify-content-center
+				+pagination-bootstrap('',1,5)
+	//End section
+
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

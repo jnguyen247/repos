@@ -1,0 +1,152 @@
+extends ../_default
+
+block vars
+	- var active = "Elements"
+	- var title = "Forms"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "With a nice modern and <br class='hidden-md hidden-sm hidden-xs'> intuitive interface"
+	-var header_small = "Forms"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	ol.breadcrumb.section-border
+		li: a(href="index.html") Home
+		li: a(href="#") Elements
+		li.active Forms
+
+	section.text-center.well.well-sm
+		.container
+			.row.justify-content-center
+				.col-lg-12.col-xl-6
+					h1.font-weight-bold Forms
+					p.lead.
+						Create your contact form in seconds.  With CF you can manage multiple contact forms easly.
+	section.text-center.inset-5.section-border
+		.container
+			h5.font-weight-bold.text-center Login form
+			.row.justify-content-center
+				.col-xl-6
+					.button-elements-group-2
+						a(href='#').button.button-facebook.button-xs.round-small.button-icon-left.button-min-width #[span.icon.fa-facebook] facebook
+						a(href='#').button.button-twitter.button-xs.round-small.button-icon-left.button-min-width #[span.icon.fa-twitter] Twitter
+						a(href='#').button.button-google.button-xs.round-small.button-icon-left.button-min-width #[span.icon.fa-google-plus] Google+
+
+			.row.justify-content-center
+				.col-xl-6
+					p.small.text-uppercase.text-light-clr.font-secondary.max-width.separate or
+					form.rd-mailform.max-width
+						.row.row-20.text-center
+							.col-md-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-sub-name" ) Username
+									input#forms-sub-name.form-input( type="text" name="name" data-constraints='@Required' )
+							.col-md-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-sub-password" ) Password
+									input#forms-sub-password.form-input( type="password" name="password" data-constraints='@Required' )
+						.button-wrap
+							button(type="submit").button.button-success.button-xs.round-xl.button-block Enter
+	section.well.section-border
+		.container
+			.row.justify-content-center
+				.col-md-8.inset-md-min
+					h5.font-weight-bold.text-center Contact us
+					form.rd-mailform.text-left( data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php' )
+						.row.row-20.align-items-end
+							.col-md-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-name" ) First name
+									input#forms-name.form-input( type="text" name="name" placeholder="Your First Name" data-constraints='@Required' )
+							.col-md-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-last-name" ) Last name
+									input#forms-last-name.form-input( type="text" name="last-name" placeholder="Your Last Name" data-constraints="@Required" )
+							.col-md-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-message" ) Your message
+									textarea#forms-message.form-input( name="message" placeholder="Write your message here" data-constraints="@Required" )
+							.col-md-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-email" ) E-mail
+									input#forms-email.form-input( type="email" name="email" placeholder="example@domain.com" data-constraints="@Email @Required" )
+							.col-md-6
+								button.button.button-primary.button-xs.round-xl.button-block.form-el-offset-1( type="submit" ) Send Message
+								
+	section.well.section-border
+		.container
+			.row.justify-content-center
+				.col-md-8.inset-md-min
+					h5.font-weight-bold.text-center Contact us (with reCAPTCHA)
+					form.rd-mailform.text-left( data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php' )
+						.row.row-20.align-items-end
+							.col-md-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-name-captha" ) Name
+									input#forms-name-captha.form-input( type="text" name="name" placeholder="Your First Name" data-constraints='@Required' )
+							.col-md-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-email-captcha" ) E-mail
+									input#forms-email-captcha.form-input( type="email" name="email" placeholder="example@domain.com" data-constraints="@Email @Required" )
+							.col-md-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-message-captcha" ) Your message
+									textarea#forms-message-captcha.form-input( name="message" placeholder="Write your message here" data-constraints="@Required" )
+							.col-md-12.col-lg-6
+								.form-wrap.form-wrap-recaptcha
+									// Google captcha
+									.recaptcha#captcha1( data-sitekey='6LfZlSETAAAAAC5VW4R4tQP8Am_to4bM3dddxkEt', data-auto-size='' )
+							.col-md-12.col-lg-6
+								button.button.button-primary.button-xs.round-xl.button-block.form-el-offset-1( type="submit" ) Send Message
+								
+	
+
+	section.well.well-sm.well-inset-3.bg-image.bg-image-1.context-dark.text-center
+		.container
+			.row.justify-content-center
+				.col-lg-8
+					h1.font-weight-bold Subscrible Our Newsletters
+					p.lead.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus eum exercitationem
+					form.rd-mailform.subscribe-form.margin-1( data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php' )
+						.form-wrap.form-wrap-validation
+							input#forms-news-email.form-input( type="email" name="email" placeholder="Name@domainname.com" data-constraints='@Required' )
+						.button-wrap.text-center
+							button(type="submit").button.button-primary.button-xs.round-xl Subscribe
+							
+	section.well.well-sm.well-inset-3.bg-image.bg-image-2.text-center
+		.container: .row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+			h1.font-weight-bold MailChimp
+			p.big Sign up to our newsletter and be the first to know about latest news, special offers, events, and discounts.
+
+			// Mailchimp
+			form.mailchimp-mailform.subscribe-form.margin-1(data-form-output='form-output-global' action='https://templatemonster.us15.list-manage.com/subscribe/post?u=ba5bb362073a413f48e4a7b90&id=8dc95d9dec' method='post')
+				.form-wrap.form-wrap-validation
+					label.form-label(for='mailchimp-email') Enter your e-mail
+					input#mailchimp-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+				.button-wrap.text-center
+					button.button.button-primary.button-xs.round-xl(type='submit') Subscribe
+
+	section.well.well-sm.well-inset-3.bg-image.bg-image-3.context-dark.text-center
+		.container: .row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+			h1.font-weight-bold Campaign Monitor
+			p.big Sign up to our newsletter and be the first to know about latest news, special offers, events, and discounts.
+
+			// Campaign Monitor
+			form.rd-form.campaign-mailform.subscribe-form.margin-1(data-form-output='form-output-global' action='https://templatermonster.createsend.com/t/j/s/zjjikd/' method='post')
+				.form-wrap.form-wrap-validation
+					label.form-label(for='campaign-email') Enter your e-mail
+					input#campaign-email.form-input(type='email' name='cm-zjjikd-zjjikd' data-constraints='@Email @Required')
+				.button-wrap.text-center
+					button.button.button-primary.button-xs.round-xl(type='submit') Subscribe
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

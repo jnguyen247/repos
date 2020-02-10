@@ -1,0 +1,69 @@
+extends ../_default
+include ../_mixins
+
+
+block vars
+	- var active = "Extras"
+	- var title = "Login page"
+	- var header_class = "bg-image bg-image-2 well-inset-3"
+
+block head
+
+block header
+	header(class=header_class)
+		-var  rd_navbar_class_ajuster = "top-panel-none-items"
+		-var  rd_navbar_data_ajuster = {'data-layout': 'rd-navbar-fixed', 'data-sm-layout': 'rd-navbar-fixed', 'data-md-layout': 'rd-navbar-fixed', 'data-md-device-layout':'rd-navbar-fixed', 'data-lg-layout': 'rd-navbar-fixed', 'data-lg-device-layout': 'rd-navbar-fixed', 'data-xl-layout': 'rd-navbar-static', 'data-xl-device-layout':'rd-navbar-static', 'data-lg-stick-up-offset': '46px', 'data-xl-stick-up-offset': '46px', 'data-xxl-stick-up-offset':'46px', 'data-lg-stick-up':  'true', 'data-xl-stick-up':  'true', 'data-xxl-stick-up': 'true'}
+		include ../navbar
+		section.text-center
+			.jumbotron.text-center.margin-large
+				h1
+					small Login Page
+					| Let's Create Something Together!
+
+			ol.breadcrumb
+				li: a(href="index.html") Home
+				li: a(href="#") Extras
+				li.active: a(href="#") Login
+
+		= '\n'
+		//Start section
+		section.well.well-sm
+			.container
+				.row.row-30.justify-content-center
+					.col-lg-6
+						.button-shadow.bg-default.py-5.px-3.round-large
+							h5.text-center Sign in
+							form.rd-mailform.max-width
+								.row.row-20.align-items-end
+									.col-md-12
+										.form-wrap.form-wrap-validation.validation-with-outside-label
+											label.form-label-outside( for="forms-sub-name" ) Username
+											input#forms-sub-name.form-input( type="text" name="name" data-constraints='@Required' )
+									.col-md-6
+										.form-wrap.form-wrap-validation.validation-with-outside-label
+											label.form-label-outside( for="forms-sub-password" ) Password
+											input#forms-sub-password.form-input( type="password" name="password" data-constraints='@Required' )
+	
+									.col-md-6
+										button(type="submit").button.button-primary.button-xs.round-xl.button-block.form-el-offset-1 Sign in
+							.text-center
+								p.small.text-uppercase.text-light-clr.font-secondary.max-width.separate or
+								.button-elements-group-2
+									a(href='#').button.button-facebook.button-xs.round-small.button-icon-left.button-min-width #[span.icon.fa-facebook] facebook
+									a(href='#').button.button-twitter.button-xs.round-small.button-icon-left.button-min-width #[span.icon.fa-twitter] Twitter
+									a(href='#').button.button-google.button-xs.round-small.button-icon-left.button-min-width #[span.icon.fa-google-plus] Google+
+		//End section
+
+block content
+
+
+
+
+
+
+
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

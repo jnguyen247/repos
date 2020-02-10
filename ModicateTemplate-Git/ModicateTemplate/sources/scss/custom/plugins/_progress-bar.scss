@@ -1,0 +1,390 @@
+/*
+* @subsection   Progress Bar
+*/
+
+//
+// Progress bars
+// --------------------------------------------------
+
+
+// Bar animations
+// -------------------------
+
+// WebKit
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Spec and IE10+
+@keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+
+// Bar itself
+// -------------------------
+
+// Outer container
+.progress {
+  overflow: visible;
+  position: relative;
+  width: 90%;
+  margin-right: 9%;
+  height: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  background-color: $progress-bg;
+  border-radius: $progress-border-radius;
+  font-family: $font-family-sec;
+  @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+
+  span{
+    position: absolute;
+    top: -6px;
+    left: calc(100% + 10px);
+    &:after{
+      content: '%';
+    }
+  }
+}
+
+// Bar of progress
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: $font-size-sm;
+  line-height: $line-height-computed;
+  color: $progress-bar-color;
+  border-radius: $progress-border-radius;
+  text-align: center;
+  //background-color: $progress-bar-bg;
+  //@include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  @include transition(width 1s ease);
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1398d9+0,ff4081+100 */
+  background: #ff4081; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ff4081 0%, #1398d9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ff4081 0%,#1398d9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ff4081 0%,#1398d9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4081', endColorstr='#1398d9',GradientType=1 ); /* IE6-9 */
+
+}
+
+/** @section Progress Bars */
+
+
+// Linear Progress Bars
+.progress-linear {
+  position: relative;
+  text-align: left;
+}
+
+.progress-linear-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include spacing(10px);
+}
+.progress-linear-title {
+  text-transform: uppercase;
+  color: $gray-light;
+  font-size: 16px;
+  font-family: $font-family-sec;
+}
+.progress-linear-body {
+  position: relative;
+  height: 10px;
+  background: $gray-250;
+  width: 90%;
+  border-radius: 0.25rem;
+}
+
+.progress-linear-bar {
+  width: 0;
+  height: inherit;
+  transition: 1s all ease-in-out;
+  border-radius: 0.25rem;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1398d9+0,ff4081+100 */
+  background: #ff4081; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ff4081 0%, #1398d9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ff4081 0%,#1398d9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ff4081 0%,#1398d9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4081', endColorstr='#1398d9',GradientType=1 ); /* IE6-9 */
+}
+
+.progress-linear-counter {
+  font-weight: 400;
+  color: $gray-light;
+  font-size: 12px;
+  position: absolute;
+  top: -6px;
+  left: calc(100% + 10px);
+
+  &::after {
+    content: "%";
+  }
+}
+
+* + .progress-linear-body {
+  margin-top: 10px;
+}
+
+.progress-linear + .progress-linear {
+  margin-top: 15px;
+}
+
+@include media-breakpoint-up(lg) {
+  .progress-linear + .progress-linear {
+    margin-top: 25px;
+  }
+}
+
+
+
+
+// Striped bars
+//
+// `.progress-striped .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar-striped` class, which you just add to an existing
+// `.progress-bar`.
+.progress-striped .progress-bar,
+.progress-bar-striped {
+  @include gradient-striped;
+  background-size: 40px 40px;
+}
+
+// Call animation for the active one
+//
+// `.progress.active .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar.active` approach.
+.progress.active .progress-bar,
+.progress-bar.active {
+  @include animation(progress-bar-stripes 2s linear infinite);
+}
+
+
+// Variations
+// -------------------------
+
+//.progress-bar-success {
+//  @include progress-bar-variant($progress-bar-success-bg);
+//}
+//
+//.progress-bar-info {
+//  @include progress-bar-variant($progress-bar-info-bg);
+//}
+//
+//.progress-bar-warning {
+//  @include progress-bar-variant($progress-bar-warning-bg);
+//}
+//
+//.progress-bar-danger {
+//  @include progress-bar-variant($progress-bar-danger-bg);
+//}
+
+
+.progress-bar-wrap{
+  max-width: 100%;
+  width: 210px;
+  
+  @include media-breakpoint-between(md, md) {
+    max-width: 120px;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 150px;
+  }
+}
+
+.progress-bar-custom {
+  position: relative;
+  width: 100%;
+  //margin: 23px 0;
+  margin-bottom: 23px;
+
+  .progress-bar__body {
+    position: absolute;
+    right: 50%;
+    width: 100%;
+    top: 50%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    font-family: $font-family-sec;
+    font-size: 43px;
+    font-weight: 700;
+    line-height: 1;
+    color: $gray-dark;
+
+    &:after{
+      content: '%';
+    }
+  }
+
+  .progress-bar__stroke,
+  .progress-bar__trail{
+    stroke-linejoin: round;
+  }
+}
+
+.progress-bar-horizontal{
+  text-align: left;
+  > svg{
+    margin-top: 7px;
+    box-shadow: $box-shadow-key-small;
+  }
+
+  .progress-bar__body{
+    width: auto!important;
+    top: -5px;
+    right: 0;
+  }
+}
+
+.progress-bar-radial{
+  position: relative;
+  padding-bottom: 100%;
+
+  > svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .progress-bar__stroke,
+  .progress-bar__trail{
+    stroke-location: outside;
+  }
+
+  .progress-bar__body{
+    transform: translate(50%, -50%);
+  }
+}
+
+.progress-bar-default {
+  .progress-bar__stroke{
+    stroke: $body-color;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($body-color, 0.05);
+  }
+}
+
+.progress-bar-primary {
+  .progress-bar__stroke{
+    stroke: $primary;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($body-color, 0.05);
+  }
+}
+
+.progress-bar-secondary-2 {
+  .progress-bar__stroke{
+    stroke: $brand-danger;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($body-color, 0.05);
+  }
+}
+
+
+.progress-bar-secondary-1 {
+  .progress-bar__stroke{
+    stroke: $brand-warning;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($body-color, 0.05);
+  }
+}
+
+.progress-bar-secondary-3 {
+  .progress-bar__stroke{
+    stroke: $brand-success;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($body-color, 0.05);
+  }
+}
+
+.progress-bar-secondary-4 {
+  .progress-bar__stroke{
+    stroke: $brand-info;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($body-color, 0.05);
+  }
+}
+
+
+/** @section Progress Circle */
+
+
+.progress-circle {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.progress-circle-block {
+  position: relative;
+  margin-bottom: 23px;
+}
+
+.progress-circle-bg {
+  fill: transparent;
+  stroke: rgba($gray-base, .05);
+  stroke-width: 3px;
+}
+
+.progress-circle-fg {
+  fill: transparent;
+  stroke: $brand-warning;
+  stroke-width: 5px;
+}
+
+.progress-circle-counter {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  top: 50%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  font-family: $font-family-sec;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 1;
+  color: $gray-dark;
+  transform: translate(-50%, -50%);
+
+  &::after {
+    content: "%";
+  }
+}
+
+.progress-circle-title {
+  font-size: 16px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: $gray-light;
+}
+
+* + .progress-bar-circle-title {
+  margin-top: 12px;
+}

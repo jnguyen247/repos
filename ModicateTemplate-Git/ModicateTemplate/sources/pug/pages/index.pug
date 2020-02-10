@@ -1,0 +1,25 @@
+extends ../_default
+
+block vars
+	- var active = "Home"
+	- var title = "Home"
+	- var header_class = "page-header"
+
+block head
+
+block header 
+
+	-var header_h1 = "Welcome to Modicate"
+	-var header_small = "#1 Web Design Agency"
+	-var header_big = "We create quality products <br> tailored to your needs and requirements."
+	-var header_content = "<div class='button-group-variant'> <a class='button button-default round-xl button-sm' href='https://www.templatemonster.com/website-templates/58434.html'>Buy Now</a> <a class='button button-default round-xl button-sm' href='#'>View Features</a></div>"
+
+	include ../includes/_header_transparent 
+
+block content 
+	
+	include ../includes/_main-content
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

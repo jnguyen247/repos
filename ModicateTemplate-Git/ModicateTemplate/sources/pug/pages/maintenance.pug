@@ -1,0 +1,52 @@
+extends ../_default
+include ../_mixins
+
+
+block vars
+	- var active = "Extras"
+	- var title = "Maintenance page"
+	- var header_class = "bg-image bg-image-2"
+
+block head
+
+block header
+	header(class=header_class)
+		-var  rd_navbar_class_ajuster = "top-panel-none-items"
+		-var  rd_navbar_data_ajuster = {'data-layout': 'rd-navbar-fixed', 'data-sm-layout': 'rd-navbar-fixed', 'data-md-layout': 'rd-navbar-fixed', 'data-md-device-layout':'rd-navbar-fixed', 'data-lg-layout': 'rd-navbar-fixed', 'data-lg-device-layout': 'rd-navbar-fixed', 'data-xl-layout': 'rd-navbar-static', 'data-xl-device-layout':'rd-navbar-static', 'data-lg-stick-up-offset': '46px', 'data-xl-stick-up-offset': '46px', 'data-xxl-stick-up-offset':'46px', 'data-lg-stick-up':  'true', 'data-xl-stick-up':  'true', 'data-xxl-stick-up': 'true'}
+		include ../navbar
+
+
+
+		= '\n'
+		//Start section
+		section.well-xl.text-center.user-info-section.context-dark
+			.container
+				.row.justify-content-center
+					.col-12
+						h1.text-uppercase.text-white The website is
+							small.text-white in maintenance mode.
+					.col-lg-8.well.well-sm
+						p.text-white.
+							Custom maintenance mode page. In an ideal world this website wouldn't exist, a client would acknowledge the importance of having web copy before the design starts. Needless to say it's very important, content is king and people are beginning to understand.
+					.col-12
+						form.rd-mailform.subscribe-form( data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php' )
+							.form-wrap.form-wrap-validation
+								input#forms-news-email.form-input( type="email" name="email" placeholder="Name@domainname.com" data-constraints='@Required' )
+							.button-wrap.text-center
+								button(type="submit").button.button-primary.button-xs.round-xl Notify when online
+
+		//End section
+
+block content
+
+
+
+
+
+
+
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

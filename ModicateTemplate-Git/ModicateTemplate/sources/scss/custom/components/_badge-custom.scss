@@ -1,0 +1,26 @@
+.badge {
+	display: inline-block;
+	min-width: 10px;
+	font-size: 12px;
+	font-weight: 400;
+	color: $primary;
+	vertical-align: middle;
+	white-space: nowrap;
+	letter-spacing: 0.08em;
+	font-family: $font-family-sec;
+	
+	&:before {
+		font-family: "FontAwesome";
+		color: #a7b0b4;
+		padding-right: 5px;
+		font-size: 16px;
+		left: 0;
+		top: 0;
+	}
+}
+
+a.badge:hover, a.badge:focus {
+	color: #252525;
+	text-decoration: none;
+	cursor: pointer;
+}

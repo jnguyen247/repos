@@ -1,0 +1,42 @@
+extends ../_default
+include ../_mixins
+
+
+block vars
+	- var active = "Extras"
+	- var title = "Search Results"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+
+block header
+	-var header_h1 = "We love our work"
+	-var header_small = "Search Results"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+
+block content
+
+	//Search Results
+	section.well.well-sm
+		.container
+			h2.text-center Search Results
+			.row.justify-content-center
+				.col-12.col-md-8.text-center 
+					// RD Search
+					form.rd-form.rd-search.subscribe-form(action='search-results.html' method='GET')
+						.form-wrap
+							label.form-label(for='rd-search-form-input') Search
+							input.form-input(id='rd-search-form-input' type='text' name='s' autocomplete='off')
+						.form-wrap.button-wrap
+							button.button.button-primary.button-xs.round-xl(type='submit') Search
+					.rd-search-results
+	//END Search Results
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

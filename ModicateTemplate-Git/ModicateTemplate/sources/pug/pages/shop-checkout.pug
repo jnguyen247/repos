@@ -1,0 +1,215 @@
+extends ../_default
+include ../_mixins
+
+
+block vars
+	- var active = "Shop"
+	- var title = "Checkout"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "Checkout"
+	-var header_small = "Shop"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	section.section-border.text-center.text-lg-left
+		.container
+			ol.breadcrumb
+				li: a(href="index.html") Home
+				li: a(href="#") Shop
+				li.active: a(href="#") Checkout
+
+
+	= '\n'
+	//Start section
+	section.well
+		.container
+			.row
+				.col-12
+					table.table
+						colgroup
+							col.col-12
+							col.col-12
+
+						tbody.text-darker-clr
+							tr.section-border-white
+								td.bg-lighter-2 Returning customer? #[a(href='#').text-primary Click here to login]
+								td.bg-lighter-2
+							tr.section-border-white
+								td.bg-lighter-2 Have a coupon? #[a(href='#').text-primary Click here to enter your code]
+								td.bg-lighter-2
+	//End section
+
+	= '\n'
+	//Start section
+	section.well
+		.container
+			.row.row-50
+				.col-md-12.col-lg-6
+					h4 Billing Details
+					form.margin-5
+						.row.row-24
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-name" ) First name *
+									input#forms-check-name.form-input.round-small( type="text" name="name" placeholder="Your First Name" data-constraints='@Required' )
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-last-name" ) Last name *
+									input#forms-check-last-name.form-input.round-small( type="text" name="last-name" placeholder="Last Name" data-constraints='@Required' )
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-company" ) Company Name
+									input#forms-check-company.form-input.round-small( type="text" name="company" placeholder="Company" )
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-email" ) Email Address *
+									input#forms-check-email.form-input.round-small( type="email" name="email" placeholder="E-Mail" data-constraints='@Email @Required' )
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-phone" ) Phone *
+									input#forms-check-phone.form-input.round-small( type="text" name="phone" placeholder="Phone" data-constraints='@Numeric @Required' )
+							.col-12.select
+								.form-wrap.form-wrap-validation
+									label.form-label-outside( for="involve-form-country" ) Country *
+									select#involve-form-country.form-input.round-small( name='country', data-constraints='@Required', data-placeholder='Select Your Country' )
+										option( label='Country' )
+										option( selected ) USA
+										option UK
+										option Ukraine
+										option Australia
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-address" ) Address *
+									input#forms-check-address.form-input.round-small( type="text" name="address" placeholder="Street address" data-constraints='@Required' )
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-apartment" ) &#8203;
+									input#forms-check-apartment.form-input.round-small( type="text" name="apartment" placeholder="Apartment, suite, unit etc. (optional)" )
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-town" ) Town / City *
+									input#forms-check-town.form-input.round-small( type="text" name="town" placeholder="Town / City" data-constraints='@Required' )
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-country" ) Country
+									input#forms-check-country.form-input.round-small( type="text" name="country" placeholder="Country" )
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-postcode" ) Postcode *
+									input#forms-check-postcode.form-input.round-small( type="text" name="postcode" placeholder="Postcode" data-constraints='@Required' )
+							.col-12
+								.form-wrap
+									label.checkbox-inline
+										input( name="passion", value="value-6", type="checkbox" )
+										span.text-dark-variant-2.font-secondary Create an account?
+
+				.col-md-12.col-lg-6.inset-md
+					h4 Ship to a different address?
+					form.margin-5
+						.row.row-24
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-name1" ) First name *
+									input#forms-check-name1.form-input.round-small( type="text" name="name" placeholder="Your First Name" data-constraints='@Required' )
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-last-name1" ) Last name *
+									input#forms-check-last-name1.form-input.round-small( type="text" name="last-name" placeholder="Last Name" data-constraints='@Required' )
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-company1" ) Company Name
+									input#forms-check-company1.form-input.round-small( type="text" name="company" placeholder="Company" )
+							.col-12
+								.form-wrap.form-wrap-validation
+									label.form-label-outside( for="involve-form-country2" ) Country *
+									select#involve-form-country2.form-input.round-small( name='country2', data-constraints='@Required', data-placeholder='Select Your Country' )
+										option( label='Country' )
+										option( selected ) United States of America (USA)
+										option United Kingdom (UK)
+										option People's Republic of China (PRC)
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-address1" ) Address *
+									input#forms-check-address1.form-input.round-small( type="text" name="address" placeholder="Street address" data-constraints='@Required' )
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-apartment1" ) &#8203;
+									input#forms-check-apartment1.form-input.round-small( type="text" name="apartment" placeholder="Apartment, suite, unit etc. (optional)" )
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-town1" ) Town / City *
+									input#forms-check-town1.form-input.round-small( type="text" name="town" placeholder="Town / City" data-constraints='@Required' )
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-country1" ) Country
+									input#forms-check-country1.form-input.round-small( type="text" name="country" placeholder="Country" )
+							.col-sm-6
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-postcode1" ) Postcode *
+									input#forms-check-postcode1.form-input.round-small( type="text" name="postcode" placeholder="Postcode" data-constraints='@Required' )
+							.col-12
+								.form-wrap.form-wrap-validation.validation-with-outside-label
+									label.form-label-outside( for="forms-check-text" ) Order notes
+									textarea#forms-check-text.form-input.round-small( name="message" placeholder="Write your message here" data-constraints="@Required" )
+
+	//End section
+
+	= '\n'
+	//Start section
+	section.margin-4.well-inset-2.checkout
+		.container
+			h4 Your order
+			.row.margin-5
+				.col-md-12.col-lg-6
+					table.table
+						thead
+							tr.bg-lighter.text-uppercase.text-darker-clr.font-secondary.section-border
+								th Product
+								th Total
+						tbody
+							tr.section-border
+								td.bg-default.section-border.text-dark-variant-2 Robin Shirt   x1
+								td.bg-default.section-border.text-dark-variant-2 $94.95
+							tr.section-border
+								th.bg-lighter-2.text-uppercase.text-darker-clr.font-secondary.letter-spacing-1 SUBTOTAL
+								td.bg-default.text-dark-variant-2 $94.95
+							tr.section-border
+								th.bg-lighter-2.text-uppercase.text-darker-clr.font-secondary.letter-spacing-1 SHIPPING
+								td.bg-default.text-dark-variant-2 Please fill in your details to see available shipping methods.
+							tr.section-border
+								th.bg-lighter-2.text-uppercase.text-darker-clr.font-secondary.letter-spacing-1 TOTAL
+								td.bg-default.text-dark-variant-2 $94.95
+
+				.col-md-12.col-lg-6.text-right
+					.payment.text-left.round-small
+						.payment-var1.bg-lighter-2.section-border
+							.form-wrap
+								label.radio-inline
+									input( name="passion", value="value-1", type="radio" )
+									span.text-dark-variant-2.font-secondary Cheque Payment
+							p.text-dark-variant-2 Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.
+						.payment-var2.bg-lighter-2
+							.form-wrap
+								label.radio-inline.block-inline-left
+									input( name="passion", value="value-2", type="radio" )
+									span.text-dark-variant-2.font-secondary PayPal
+								a(href='#').text-primary What is PayPal?
+							.image-wrapper
+								a(href='#'): img(alt='' src='images/shop-pay-1.png')
+								a(href='#'): img(alt='' src='images/shop-pay-2.png')
+								a(href='#'): img(alt='' src='images/shop-pay-3.png')
+								a(href='#'): img(alt='' src='images/shop-pay-4.png')
+								a(href='#'): img(alt='' src='images/shop-pay-5.png')
+					a(href='#').margin-5.button.button-primary.button-xs.round-small Place order
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

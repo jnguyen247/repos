@@ -1,0 +1,25 @@
+-var  rd_navbar_class_ajuster = "top-panel-none-items"
+-var  rd_navbar_data_ajuster = {'data-layout': 'rd-navbar-fixed', 'data-sm-layout': 'rd-navbar-fixed', 'data-md-layout': 'rd-navbar-fixed', 'data-md-device-layout':'rd-navbar-fixed', 'data-lg-layout': 'rd-navbar-fixed', 'data-lg-device-layout': 'rd-navbar-fixed', 'data-xl-layout': 'rd-navbar-static', 'data-xl-device-layout':'rd-navbar-static', 'data-lg-stick-up-offset': '46px', 'data-xl-stick-up-offset': '46px', 'data-xxl-stick-up-offset':'46px', 'data-lg-stick-up':  'true', 'data-xl-stick-up':  'true', 'data-xxl-stick-up': 'true'}
+
+
+header(class=header_class)
+	include ../navbar
+	section
+		//Swiper
+		.swiper-container.swiper-slider(data-autoplay="5000" data-slide-effect="fade" data-loop="false")
+			.jumbotron.text-center
+				h1
+					small!=header_small
+					!=header_h1
+				p.big!=header_big
+				!=header_content
+			.swiper-wrapper
+				.swiper-slide(data-slide-bg="images/header-1.jpg")
+					.swiper-slide-caption
+
+				.swiper-slide(data-slide-bg="images/header-3.jpg")
+					.swiper-slide-caption
+
+				.swiper-slide(data-slide-bg="images/header-4.jpg")
+					.swiper-slide-caption
+						

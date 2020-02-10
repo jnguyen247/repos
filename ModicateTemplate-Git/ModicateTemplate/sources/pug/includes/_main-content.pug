@@ -1,0 +1,184 @@
+include ../components/_ui-progress-linear
+
+//Start section
+section.text-center.well.well-sm
+	.container
+		.row.justify-content-center
+			.col-xl-10
+				h1.font-weight-bold What We Offer
+				p.lead.big.
+					We create #[a(href='#').text-primary user interfaces] and modern #[a(href='#').text-primary websites]. We will help you build strong #[a(href='#').text-primary online business] by creating a professional website which best suits your needs.
+				img(src="images/index_img1.jpg" alt="").box-shadow.margin-2.margin-negative
+//End section
+
+= '\n'
+//Start section
+section.well.well-sm.bg-lighter.relative.text-center
+	.container
+		.row.justify-content-center
+			.col-xl-6
+				h1.font-weight-bold Template Features
+				p.lead.
+					We worked out an amazing combination of vast functionality
+					and user's comfort. It will totally impress you with its power!
+		.row.margin-1.text-lg-left
+			.col-md-6.col-lg-3
+				span.icon.icon-lg.icon-primary.fa-heartbeat
+				h5 Retina Ready
+				p.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua. Ut enim!
+			.col-md-6.col-lg-3
+				span.icon.icon-lg.icon-primary.fa-compass
+				h5 Incredibly Flexible
+				p.
+					Donec ac odio tempor orci dapibus ultrices. Natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. 
+			.col-md-6.col-lg-3
+				span.icon.icon-lg.icon-primary.fa-edit
+				h5 Clean Design
+				p.
+					Erat pellentesque adipiscing commodo elit at imperdiet dui. Lectus proin nibh nisl condimentum id.
+			.col-md-6.col-lg-3
+				span.icon.icon-lg.icon-primary.fa-comments-o
+				h5 24/7 Support
+				p.
+					Cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Etiam sit amet nisl purus. Velit laoreet
+//End section
+
+= '\n'
+//Start section
+section.well.well-sm.text-center.text-lg-left
+	.container
+		.row.justify-content-lg-between
+			.col-lg-6.col-xl-5
+				h1.font-weight-bold About Us
+				p.lead.
+					We are a studio that aims to make our users experience easier and much more pleasant. <br><br>You probably won't have a better opportunity to make sure of our competence, as well as friendliness towards our customers.
+			.col-lg-6.col-xl-6.text-left
+
+				.inset-2
+					+progress-linear({
+						title: 'CREATIVE DESIGN',
+						value: '75'
+					})
+	
+					+progress-linear({
+						title: 'BRANDING',
+						value: '85'
+					})
+	
+					+progress-linear({
+						title: 'SUPPORT',
+						value: '80'
+					})
+					
+//End section
+
+= '\n'
+
+include ../includes/_counter-1
+
+//Start section
+section.well.well-sm.text-center.section-border
+	.container
+		ul.flex-list
+			li: a(href='#'): img(src="images/partner1.png" alt="")
+			li: a(href='#'): img(src="images/partner2.png" alt="")
+			li: a(href='#'): img(src="images/partner3.png" alt="")
+			li: a(href='#'): img(src="images/partner4.png" alt="")
+			li: a(href='#'): img(src="images/partner5.png" alt="")
+			li: a(href='#'): img(src="images/partner6.png" alt="")
+//End section
+
+= '\n'
+//Start section
+section.well.well-sm.well-inset-2.text-center.text-lg-left
+	.container
+		h1.font-weight-bold.text-center Latest From The Blog
+		.row.row-30
+			.col-lg-4
+				article.thumbnail.thumbnail-4
+					img(src="images/index_img2.jpg" alt="")
+					.caption
+						h4: a(href='blog_post.html') A Team Approach to Large-scale Design Projects
+						p.text-dark-variant-2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+						.blog-info
+							.pull-md-left
+								time(datetime="2019").meta.fa-calendar Feb 10, 2019
+								a(href='#').badge.fa-comments.font-secondary 13
+							a(href="blog_post.html").button-link Read More
+			.col-lg-4
+				article.thumbnail.thumbnail-4
+					img(src="images/index_img3.jpg" alt="")
+					.caption
+						h4: a(href='blog_post.html') 18 Web Design Trends of 2019 You Should Know About
+						p.text-dark-variant-2 Nunc mi ipsum faucibus vitae. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. 
+						.blog-info
+							.pull-md-left
+								time(datetime="2019").meta.fa-calendar Feb 10, 2019
+								a(href='#').badge.fa-comments.font-secondary 13
+							a(href="blog_post.html").button-link Read More
+			.col-lg-4
+				article.thumbnail.thumbnail-4
+					img(src="images/index_img4.jpg" alt="")
+					.caption
+						h4: a(href='blog_post.html') Why Your Client Needs a Responsive Website
+						p.text-dark-variant-2 Quam pellentesque nec nam aliquam sem et tortor consequat. Gravida dictum fusce ut placerat. 
+						.blog-info
+							.pull-md-left
+								time(datetime="2019").meta.fa-calendar Feb 10, 2019
+								a(href='#').badge.fa-comments.font-secondary 13
+							a(href="blog_post.html").button-link Read More
+//End section
+
+= '\n'
+//Start section
+section.well.well-sm.well-inset-3.bg-image.bg-image-1.context-dark.text-center
+	.container
+		.row.justify-content-center
+			.col-lg-8
+				h1.font-weight-bold Subscribe to Our Newsletter
+				p.lead.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus eum exercitationem
+				form.rd-mailform.subscribe-form.margin-1( data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php' )
+					.form-wrap.form-wrap-validation
+						input#forms-news-email.form-input( type="email" name="email" placeholder="Enter your e-mail" data-constraints='@Required' )
+					.button-wrap.text-center
+						button(type="submit").button.button-primary.button-xs.round-xl Subscribe
+//End section
+
+= '\n'
+//Start section
+section.well.well-sm.well-inset-2.text-center
+	.container
+		.row.justify-content-center
+			.col-xl-6
+				h1.font-weight-bold.text-center Testimonials
+				p.lead.
+					Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!
+		.row.margin-1
+			//Owl Carousel
+			.owl-carousel(data-autoplay='true' data-items='1' data-md-items='2' data-sm-items='1' data-lg-items='3' data-nav="true" data-margin="30" data-loop='true')
+				
+				blockquote.quote-2
+					img(src="images/index_img5.jpg" alt="").rounded-circle
+					h6: cite Jennifer Rogers
+					p.small.text-light-clr.text-uppercase Regular Client
+					p.heading-6.font-italic.font-base.text-base
+						q Lectus tincidunt pellentesque augue urna sit sed, arcu sed ante ac montes pellentesque consectetuer, neque magnis penatibus laoreet vehicula nulla orci, a malesuada justo laoreet ipsum, in ac fusce.
+
+				
+				blockquote.quote-2
+					img(src="images/index_img6.jpg" alt="").rounded-circle
+					h6: cite Walter Williams
+					p.small.text-light-clr.text-uppercase Regular Client
+					p.heading-6.font-italic.font-base.text-base
+						q Dui vivamus arcu felis bibendum ut tristique. Sed elementum tempus egestas sed sed risus pretium quam. Mauris rhoncus aenean vel elit scelerisque mauris. Risus in hendrerit gravida rutrum 
+
+				
+				blockquote.quote-2
+					img(src="images/index_img7.jpg" alt="").rounded-circle
+					h6: cite John McMillan
+					p.small.text-light-clr.text-uppercase Regular Client
+					p.heading-6.font-italic.font-base.text-base
+						q Viverra aliquet eget sit amet tellus cras adipiscing enim. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Commodo sed egestas egestas fringilla 
+//End section

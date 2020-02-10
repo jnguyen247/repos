@@ -1,0 +1,145 @@
+extends ../_default
+
+//- Includes
+include ../components/_ui-card
+
+block vars
+	- var active = "Elements"
+	- var title = "Accourdions & Tabs"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "With a nice modern and <br class='hidden-md hidden-sm hidden-xs'> intuitive interface"
+	-var header_small = "Tabs & Accordions"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	ol.breadcrumb.section-border
+		li: a(href="index.html").text-primary Home
+		li: a(href="#") Elements
+		li.active Tabs & Accordions
+
+	section.text-center.well.well-sm
+		.container
+			.row.justify-content-center
+				.col-lg-12.col-xl-6.col-xl-offset-3
+					h1.font-weight-bold Tabs & Accordions
+					p.lead.
+						With a nice modern and intuitive interface you can control contents to be contained and organised within a single frame.
+	section.text-center.well.section-border
+		.container
+			h5.font-weight-bold.text-center Horizontal Tabs
+			.row.justify-content-center
+				.col-xl-10.col-xl-offset-1
+					//Tabs
+					#tabs-1.tabs-custom.tabs-horizontal.tabs-corporate
+						ul.nav.nav-tabs.text-center.myTabs(role="tablist")
+							li.round-xl.nav-item(role="presentation"): a.round-xl.nav-link.active(href="#tab0" aria-controls="tab0" role="tab" ) Tab 0
+							li.round-xl.nav-item(role="presentation"): a.round-xl.nav-link(href="#tab1" aria-controls="tab1" role="tab" ) Tab 1
+							li.round-xl.nav-item(role="presentation"): a.round-xl.nav-link(href="#tab2" aria-controls="tab2" role="tab" ) Tab 2
+							li.round-xl.nav-item(role="presentation"): a.round-xl.nav-link(href="#tab3" aria-controls="tab3" role="tab" ) Tab 3
+							li.round-xl.nav-item(role="presentation"): a.round-xl.nav-link(href="#tab4" aria-controls="tab4" role="tab" ) Tab 4
+	
+	
+						//Tab panes
+						div.tab-content.text-md-left
+							.tab-pane.active.fade.show(role="tabpanel" id="tab0") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus molestias nam nobis officia quidem quisquam ratione recusandae reprehenderit veniam vero voluptates! A ad aspernatur autem corporis, culpa deleniti dignissimos id in iure, laudantium magnam maxime nostrum, praesentium quam soluta tempora voluptates?  molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id illum, ipsa iusto, laborum magnam maiores minima necessitatibus obcaecati optio provident qui quo repellat sequi sunt totam veritatis vitae. <br><br> Dolores esse nam obcaecati praesentium quod? Accusamus ad aliquam asperiores beatae blanditiis consectetur consequuntur culpa doloremque ea exercitationem, facilis illum laborum magnam maiores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem?
+							.tab-pane.fade(role="tabpanel" id="tab1")  Nostrum, praesentium quam soluta tempora voluptates? Alias aliquam architecto consequatur doloribus dolorum est ex excepturi facere in, iusto pariatur provident, quod repudiandae! Accusantium aliquid amet aut beatae consequatur dignissimos dolores ducimus fuga, id iste itaque molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id illum, ipsa iusto, laborum magnam maiores minima necessitatibus obcaecati optio provident qui quo repellat sequi sunt totam veritatis vitae. <br><br> Dolores esse nam obcaecati praesentium quod? Accusamus ad aliquam asperiores beatae blanditiis consectetur consequuntur culpa doloremque ea exercitationem, facilis illum laborum magnam maiores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem?
+							.tab-pane.fade(role="tabpanel" id="tab2")  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus molestias nam nobis officia quidem quisquam ratione recusandae reprehenderit veniam vero voluptates!<br><br>  A ad aspernatur autem corporis, culpa deleniti dignissimos id in iure, laudantium magnam maxime nostrum, praesentium quam soluta tempora voluptates? Alias aliquam architecto consequatur doloribus dolorum est ex excepturi facere in, iusto pariatur provident, quod repudiandae! Accusantium aliquid amet aut beatae consequatur dignissimos dolores ducimus fuga, id iste itaque molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id itiis consectetur consequuntur culpa doloremque ea exercitationem, facilis illum laborum magnam maiores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem?
+							.tab-pane.fade(role="tabpanel" id="tab3")  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus molestias nam nobis officia quidem quisquam ratione recusandae reprehenderit veniam vero voluptates! A ad aspernatur autem corporis, culpa deleniti dignissimos id in iure, laudantium magnam maxime nostrum, praesentium quam soluta tempora voluptates? Alias aliquam architecto consequatur doloribus dolorum est ex excepturi facere in, iusto pariatur provident, quod repudiandae! Accusantium aliquid amet aut beatae consequatur dignissimos dolores ducimus fuga, id iste itaque molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id illum, ipsa iores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem?
+							.tab-pane.fade(role="tabpanel" id="tab4")  Accusamus ad aliquam asperiores beatae blanditiis consectetur consequuntur culpa doloremque ea exercitationem, facilis illum laborum magnam maiores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem? A ad aspernatur autem corporis, culpa deleniti dignissimos id in iure, laudantium magnam maxime nostrum, praesentium quam soluta tempora voluptates? Alias aliquam architecto consequatur doloribus dolorum est ex excepturi facere in, iusto pariatur provident, quod repudiandae! Accusantium aliquid amet aut beatae consequatur dignissimos dolores ducimus fuga, id iste itaque molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id illum, ipsa iusto, laborum magnam maiores minima necessitatibus obcaecati optio provident qui quo repellat sequi sunt totam veritatis vitae.
+
+	section.text-center.well.section-border
+		.container
+			h5.text-center.font-weight-bold Vertical Tabs
+			.row.justify-content-center
+				.col-md-10
+					//Vertical Tabs
+					#tabs-2.tabs-custom.tabs-vertical.tabs-corporate
+						ul.nav.nav-tabs.vertical-tabs.text-center.myTabs2(role="tablist")
+							li.round-xl.nav-item(role="presentation"): a.nav-link.active.round-xl(href="#vtab0" aria-controls="tab0" role="tab" ) Tab 0
+							li.round-xl.nav-item(role="presentation"): a.nav-link.round-xl(href="#vtab1" aria-controls="vtab1" role="tab" ) Tab 1
+							li.round-xl.nav-item(role="presentation"): a.nav-link.round-xl(href="#vtab2" aria-controls="vtab2" role="tab" ) Tab 2
+							li.round-xl.nav-item(role="presentation"): a.nav-link.round-xl(href="#vtab3" aria-controls="vtab3" role="tab" ) Tab 3
+							li.round-xl.nav-item(role="presentation"): a.nav-link.round-xl(href="#vtab4" aria-controls="vtab4" role="tab" ) Tab 4
+	
+						//Vertical Tab panes
+						div.tab-content.tab-conten-vert.text-md-left
+							.tab-pane.active.fade.show(role="tabpanel" id="vtab0") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus molestias nam nobis officia quidem quisquam ratione recusandae reprehenderit veniam vero voluptates! A ad aspernatur autem corporis, culpa deleniti dignissimos id in iure, laudantium magnam maxime nostrum, praesentium quam soluta tempora voluptates?  molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id illum, ipsa iusto, laborum magnam maiores minima necessitatibus obcaecati optio provident qui quo repellat sequi sunt totam veritatis vitae. <br><br> Dolores esse nam obcaecati praesentium quod? Accusamus ad aliquam asperiores beatae blanditiis consectetur consequuntur culpa doloremque ea exercitationem, facilis illum laborum magnam maiores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem?
+							.tab-pane.fade(role="tabpanel" id="vtab1")  Nostrum, praesentium quam soluta tempora voluptates? Alias aliquam architecto consequatur doloribus dolorum est ex excepturi facere in, iusto pariatur provident, quod repudiandae! Accusantium aliquid amet aut beatae consequatur dignissimos dolores ducimus fuga, id iste itaque molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id illum, ipsa iusto, laborum magnam maiores minima necessitatibus obcaecati optio provident qui quo repellat sequi sunt totam veritatis vitae. <br><br> Dolores esse nam obcaecati praesentium quod? Accusamus ad aliquam asperiores beatae blanditiis consectetur consequuntur culpa doloremque ea exercitationem, facilis illum laborum magnam maiores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem?
+							.tab-pane.fade(role="tabpanel" id="vtab2")  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus molestias nam nobis officia quidem quisquam ratione recusandae reprehenderit veniam vero voluptates!<br><br>  A ad aspernatur autem corporis, culpa deleniti dignissimos id in iure, laudantium magnam maxime nostrum, praesentium quam soluta tempora voluptates? Alias aliquam architecto consequatur doloribus dolorum est ex excepturi facere in, iusto pariatur provident, quod repudiandae! Accusantium aliquid amet aut beatae consequatur dignissimos dolores ducimus fuga, id iste itaque molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id itiis consectetur consequuntur culpa doloremque ea exercitationem, facilis illum laborum magnam maiores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem?
+							.tab-pane.fade(role="tabpanel" id="vtab3")  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deleniti eaque eum exercitationem fugit in, ipsum, itaque minus molestias nam nobis officia quidem quisquam ratione recusandae reprehenderit veniam vero voluptates! A ad aspernatur autem corporis, culpa deleniti dignissimos id in iure, laudantium magnam maxime nostrum, praesentium quam soluta tempora voluptates? Alias aliquam architecto consequatur doloribus dolorum est ex excepturi facere in, iusto pariatur provident, quod repudiandae! Accusantium aliquid amet aut beatae consequatur dignissimos dolores ducimus fuga, id iste itaque molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id illum, ipsa iores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem?
+							.tab-pane.fade(role="tabpanel" id="vtab4")  Accusamus ad aliquam asperiores beatae blanditiis consectetur consequuntur culpa doloremque ea exercitationem, facilis illum laborum magnam maiores necessitatibus nostrum numquam officiis quae quos, rem rerum sunt suscipit tempora vero voluptatem? A ad aspernatur autem corporis, culpa deleniti dignissimos id in iure, laudantium magnam maxime nostrum, praesentium quam soluta tempora voluptates? Alias aliquam architecto consequatur doloribus dolorum est ex excepturi facere in, iusto pariatur provident, quod repudiandae! Accusantium aliquid amet aut beatae consequatur dignissimos dolores ducimus fuga, id iste itaque molestias nisi nostrum omnis perspiciatis quasi qui, quia quisquam, tenetur ullam unde velit veniam! Aliquam aliquid aut commodi cumque dolorem, ducimus enim eos harum id illum, ipsa iusto, laborum magnam maiores minima necessitatibus obcaecati optio provident qui quo repellat sequi sunt totam veritatis vitae.
+
+	section.well.well-inset-2
+		.container
+			h5.text-center.font-weight-bold Accordion
+			.row.justify-content-center
+				.col-10
+					// Bootstrap collapse
+					#accordion1.card-group-custom.card-group-corporate(role='tablist' aria-multiselectable='false')
+						+card({
+							show: true,
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '1',
+							header: 'What are the advantages of purchasing a website template?'
+						})
+							p The major advantage is price: You get a high quality design for just $20-$70. You don’t have to hire a web designer or web design studio. Second advantage is time frame: It usually takes 5-15 days for a good designer to produce a web page of such quality.
+
+						+card({ 
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '2',
+							header: 'Do you provide any scripts with your templates or could you do some custom programming?'
+						})
+							p Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at www.zemez.io If you are not sure that the element you’re interested in is active please contact our Support Chat for clarification.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '3',
+							header: 'What do I receive when I order a template from Zemez?'
+						})
+							p After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the type of the product you have purchased.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '4',
+							header: 'In what formats are your templates available?'
+						})
+							p Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file. In most templates, HTML is compatible with Adobe® Dreamweaver® and Microsoft® FrontPage®.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '5',
+							header: 'What am I allowed to do with the templates?'
+						})
+							p You may build a website using the template in any way you like. You may not resell or redistribute templates (like we do); claim intellectual or exclusive ownership to any of our products, modified or unmodified. All products are property of content providing companies and individuals. You are also not allowed to make more than one project using the same template (you have to purchase the same template once more in order to make another project with the same design).
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '6',
+							header: 'What is a unique/non-unique purchase?'
+						})
+							p Non-exclusive purchase means that other people can buy the template you have chosen some time later. Exclusive or unique purchase guarantees that you are the last person to buy this template. After an exclusive purchase occurs the template is being permanently removed from the sales directory and will never be available to other customers again. Only you and people who bought the template before you will own it.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '7',
+							header: 'How can I pay for my order?'
+						})
+							p We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

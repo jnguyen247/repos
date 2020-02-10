@@ -1,0 +1,185 @@
+//
+// Panel custom styles
+// 
+
+// Light
+//
+$accordion-corporate-color: $gray-700;
+$accordion-corporate-background: #f5f5f5;
+$accordion-corporate-border: #f5f5f5;
+$accordion-corporate-content-color: $body-color;
+$accordion-corporate-arrow-color: $white;
+$accordion-corporate-arrow-background: $primary;
+$accordion-corporate-shadow: -1px 2px 5px 0px rgba(#444953, 0.12);
+$accordion-corporate-border-radius: 4px;
+$accordion-corporate-header-padding: 12px 32px 12px 53px;
+$accordion-corporate-content-padding: 25px 44px 25px nth($accordion-corporate-header-padding, 4);
+
+// Panel groups
+.card-group-custom {
+	margin-bottom: 0;
+
+	.card-header + .collapse > .card-body,
+	.card-header + .collapse > .list-group {
+		border-top: 0;
+	}
+
+	.card + .card {
+		margin-top: 0;
+	}
+}
+
+.card-group-custom.card-group-corporate {
+	.card + .card {
+		//margin-top: 30px;
+	}
+}
+
+.card-custom {
+	display: block;
+	margin: 0;
+	background: inherit;
+	border-radius: 0;
+	box-shadow: none;
+	text-align: left;
+	border: 1px solid $accordion-corporate-border;
+
+	a {
+		display: block;
+	}
+
+	// Panel heading
+	.card-header {
+		padding: 0;
+		border-bottom: 0;
+		border-radius: 0;
+	}
+
+	// Panel contents
+	.card-body {
+		padding: 0;
+		border: 0;
+		transition: 1.3s all ease;
+	}
+
+	.card-title {
+		margin-bottom: 0;
+	}
+}
+
+* + .card-group-custom {
+	margin-top: 35px;
+
+	@include media-breakpoint-up(md) {
+		margin-top: 50px;
+	}
+}
+
+// Panel corporate
+.card-corporate {
+	text-align: left;
+
+	.show,
+	.collapsing {
+		.card-body {
+			background: $accordion-corporate-background;
+		}
+	}
+
+	.card-title a { 
+		position: relative;
+		z-index: 1;
+		padding: $accordion-corporate-header-padding;
+		font-size: 15px;
+		line-height: 1.25;
+		letter-spacing: 0;
+		color: $accordion-corporate-color;
+		transition: .5s all ease;
+		border-radius:  0;
+		background-color: $accordion-corporate-background;
+
+
+		// Open state
+		.card-arrow {
+			&:after {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		// Collapsed state
+		&.collapsed {
+			border-radius: 0;
+			border-bottom-width: 0;
+			background-color: $white;
+
+			.card-arrow {
+				border-radius: $accordion-corporate-border-radius ;
+				&:after {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+	// Panel arrow
+	.card-arrow {
+		position: absolute;
+		top: 14px;
+		left: 17px;
+		width: 18px;
+		height: 18px;
+		z-index: 2;
+		background: $accordion-corporate-arrow-background;
+		border-radius: $accordion-corporate-border-radius;
+		transition: .33s all ease;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			z-index: 4;
+			transform: translateY(-50%);
+			background: $accordion-corporate-arrow-color;
+		}
+
+		&::before {
+			width: 10px;
+			height: 2px;
+			right: 4px;
+		}
+
+		&::after {
+			width: 2px;
+			height: 10px;
+			right: 8px;
+		}
+	}
+
+	.collapse {
+		position: relative;
+		z-index: 1;
+		color: $accordion-corporate-content-color;
+		border-radius: 0;
+	}
+
+	.card-body {
+		padding: $accordion-corporate-content-padding;
+	}
+
+	// Media queries
+	@include media-breakpoint-down(md) {
+		.card-title a,
+		.card-body {
+			//padding-left: 25px;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		.card-title a {
+			font-size: 18px;
+		}
+	}
+}

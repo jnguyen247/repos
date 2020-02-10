@@ -1,0 +1,79 @@
+extends ../_default
+include ../_mixins
+
+
+block vars
+	- var active = "Pages"
+	- var title = "Contact Us"
+	- var header_class = "bg-image bg-image-2 well-inset-3"
+
+block head
+
+block header
+	header(class=header_class)
+		-var  rd_navbar_class_ajuster = "top-panel-none-items"
+		-var  rd_navbar_data_ajuster = {'data-layout':'rd-navbar-fixed', 'data-hover-on':'false', 'data-stick-up':'false', 'data-sm-layout':'rd-navbar-fixed', 'data-sm-device-layout':'rd-navbar-fixed', 'data-md-layout':'rd-navbar-fixed', 'data-md-device-layout':'rd-navbar-fixed', 'data-lg-layout':'rd-navbar-fixed','data-xl-layout':'rd-navbar-static', 'data-lg-device-layout': 'rd-navbar-fixed', 'data-xl-device-layout': 'rd-navbar-static', "data-sm-stick-up":'true', "data-md-stick-up": 'true', "data-lg-stick-up":'true', 'data-stick-up-clone': 'true'}
+		include ../navbar
+			
+		section.text-center
+			.jumbotron.text-center.margin-large
+				h1
+					small GET IN TOUCH
+					| Let's Create Something Together!
+
+			ol.breadcrumb
+				li: a(href="index.html") Home
+				li: a(href="#") Elements
+				li.active: a(href="#") Contact us
+
+		= '\n'
+		//Start section
+		section.well.well-sm
+			.container
+				.row.row-30
+					.col-lg-8
+						.button-shadow.bg-default.py-5.px-3.round-large
+							h5.text-center GET IN TOUCH
+							form.rd-mailform.text-left( data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php' )
+								.row.row-20.align-items-end
+									.col-md-6
+										.form-wrap.form-wrap-validation.validation-with-outside-label
+											label.form-label-outside( for="forms-name" ) First name
+											input#forms-name.form-input( type="text" name="name" placeholder="Your First Name" data-constraints='@Required' )
+									.col-md-6
+										.form-wrap.form-wrap-validation.validation-with-outside-label
+											label.form-label-outside( for="forms-last-name" ) Last name
+											input#forms-last-name.form-input( type="text" name="last-name" placeholder="Your Last Name" data-constraints="@Required" )
+									.col-md-12
+										.form-wrap.form-wrap-validation.validation-with-outside-label
+											label.form-label-outside( for="forms-message" ) Your message
+											textarea#forms-message.form-input( name="message" placeholder="Write your message here" data-constraints="@Required" )
+									.col-md-6
+										.form-wrap.form-wrap-validation.validation-with-outside-label
+											label.form-label-outside( for="forms-email" ) E-mail
+											input#forms-email.form-input( type="email" name="email" placeholder="example@domain.com" data-constraints="@Email @Required" )
+									.col-md-6
+										button.button.button-primary.button-xs.round-xl.button-block.form-el-offset-1( type="submit" ) Send Message
+
+					.col-lg-4.text-center.text-lg-left
+						address.contact-block.bg-default.button-shadow.py-5.px-4.round-large
+							dl.list-md
+								dt.heading-6 ADDRESS
+								dd 123, New Lenox, Chicago, IL 60606
+								dt.heading-6 WE ARE OPEN
+								dd Open hours: 8.00-18.00 Mon-Sat
+								dt.heading-6 PHONE
+								dd
+									a(href='tel:#') 123-456-7890, &nbsp;
+									a(href='tel:#') 098-765-4321
+								dt.heading-6 E-MAIL
+								dd: a(href='mailto:#') info@example.com
+							+lists('list-inline list-inline-3',['fa-facebook-square', 'fa-twitter-square', 'fa-google-plus-square'],['', '', ''])
+		//End section
+
+block content
+	
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

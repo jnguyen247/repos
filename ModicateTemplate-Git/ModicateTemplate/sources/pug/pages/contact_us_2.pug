@@ -1,0 +1,88 @@
+extends ../_default
+include ../_mixins
+
+
+block vars
+	- var active = "Pages"
+	- var title = "Contact Us 2"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "Let's Create Something Together!"
+	-var header_small = "GET IN TOUCH"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	ol.breadcrumb.section-border
+		li: a(href="index.html") Home
+		li: a(href="#") Elements
+		li.active: a(href="#") Contact us
+
+	= '\n'
+	//Start section
+	section.well.well-sm
+		.container
+			.row.row-30
+				.col-lg-4.text-center.text-lg-left
+					address.contact-block
+						dl
+							dt.heading-6 ADDRESS
+							dd 123, New Lenox, Chicago, IL 60606 
+							dt.heading-6 WE ARE OPEN
+							dd Open hours: 8.00-18.00 Mon-Sat
+							dt.heading-6 PHONE
+							dd
+								a(href='tel:#') 123-456-7890, &nbsp;
+								a(href='tel:#') 098-765-4321
+							dt.heading-6 E-MAIL
+							dd: a(href='mailto:#') info@example.com
+						+lists('list-inline list-inline-3',['fa-facebook-square', 'fa-twitter-square', 'fa-google-plus-square'],['', '', ''])
+
+				.col-lg-8
+					.button-shadow.py-5.px-3.round-large
+						h5.text-center GET IN TOUCH
+						form.rd-mailform.text-left( data-form-output="form-output-global", data-form-type='forms', method='post', action='bat/rd-mailform.php' )
+							.row.row-20.align-items-end
+								.col-md-6
+									.form-wrap.form-wrap-validation.validation-with-outside-label
+										label.form-label-outside( for="forms-name" ) First name
+										input#forms-name.form-input( type="text" name="name" placeholder="Your First Name" data-constraints='@Required' )
+								.col-md-6
+									.form-wrap.form-wrap-validation.validation-with-outside-label
+										label.form-label-outside( for="forms-last-name" ) Last name
+										input#forms-last-name.form-input( type="text" name="last-name" placeholder="Your Last Name" data-constraints="@Required" )
+								.col-md-12
+									.form-wrap.form-wrap-validation.validation-with-outside-label
+										label.form-label-outside( for="forms-message" ) Your message
+										textarea#forms-message.form-input( name="message" placeholder="Write your message here" data-constraints="@Required" )
+								.col-md-6
+									.form-wrap.form-wrap-validation.validation-with-outside-label
+										label.form-label-outside( for="forms-email" ) E-mail
+										input#forms-email.form-input( type="email" name="email" placeholder="example@domain.com" data-constraints="@Email @Required" )
+								.col-md-6
+									button.button.button-primary.button-xs.round-xl.button-block.form-el-offset-1( type="submit" ) Send Message
+	//End section
+
+	section
+		.google-map-container( data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-styles='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]' data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png' data-zoom='5',)
+			.google-map
+			ul.google-map-markers
+				li( data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow', )
+				
+		//.rd-google-map.rd-google-map__model(data-zoom='15', data-marker='images/gmap_marker.png', data-marker-active='images/gmap_marker_active.png', data-y='40.64318', data-x='-73.9874068', data-styles='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]')
+			ul.map_locations
+				li(data-y='40.64318', data-x='-73.9874068')
+					p 9870 St Vincent Place, Glasgow, DC 45 Fr 45.
+
+
+
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered

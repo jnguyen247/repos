@@ -1,0 +1,167 @@
+extends ../_default
+
+//- Includes
+include ../_mixins
+include ../components/_ui-card
+
+
+block vars
+	- var active = "Pages"
+	- var title = "FAQ Page"
+	- var header_class = "page-header subpage_header"
+
+block head
+
+block header
+
+	-var header_h1 = "All your Questions answered in one place"
+	-var header_small = "FAQ"
+	-var header_big = ""
+	-var header_content = ""
+	include ../includes/_header_transparent
+
+block content
+	ol.breadcrumb.section-border
+		li: a(href="index.html") Home
+		li: a(href="#") Pages
+		li.active: a(href="#") FAQs
+
+
+	= '\n'
+	//Start section
+	section.well.well-sm.section-border
+		.container
+			h1.font-weight-bold.text-center Some of Your Questions
+			.row
+				.col-12
+					// Bootstrap collapse
+					#accordion1.card-group-custom.card-group-corporate(role='tablist' aria-multiselectable='false')
+						+card({
+							show: true,
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '1',
+							header: 'How can I become an author?'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+						+card({ 
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '2',
+							header: 'Helpful Resources for Authors'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '3',
+							header: 'How much money can I make?'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '4',
+							header: 'Can I offer my items for free on a promotional basis?'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '5',
+							header: 'An Introduction to the Marketplaces for Authors'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '6',
+							header: 'How does the Tuts+ Premium affiliate program work?'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '7',
+							header: 'What Images, Videos, Code or Music Can I Use in my Items?'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '8',
+							header: 'Can I use trademarked names in my items?'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '9',
+							header: 'Tips for Increasing Your Referral Income'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							
+						+card({
+							cardClass: 'card-corporate',
+							parentId: 'accordion1',
+							number: '10',
+							header: 'How can I get support for an item which isn\'t working correctly?'
+						})
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							
+	//End section
+
+	= '\n'
+	//Start section
+	section
+		.container
+			.row.section-border.well.well-sm
+				.col-12
+					h1.font-weight-bold.text-center.text-lg-left Some of your Questions
+					ul.marked-list.margin-2.questions
+						li.text-primary.big: a(href='#q1').text-base How can I become an author?
+						li.text-primary.big: a(href='#q2').text-base Helpful Resources for Authors
+						li.text-primary.big: a(href='#q3').text-base How much money can I make?
+						li.text-primary.big: a(href='#q4').text-base Can I offer my items for free on a promotional basis?
+						li.text-primary.big: a(href='#q5').text-base An Introduction to the Marketplaces for Authors
+			.row.section-border.well#q1
+				.col-12
+					p.lead.font-secondary.text-darker-clr Q. How do I become an author?
+					p.heading-6.letter-spacing-null.font-base.text-base.inset-1.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			.row.section-border.well#q2
+				.col-12
+					p.lead.font-secondary.text-darker-clr Q. Helpful Resources for Authors
+					p.heading-6.letter-spacing-null.font-base.text-base.inset-1.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.
+			.row.section-border.well#q3
+				.col-12
+					p.lead.font-secondary.text-darker-clr Q. How much money can I make?
+					p.heading-6.letter-spacing-null.font-base.text-base.inset-1.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			.row.section-border.well#q4
+				.col-12
+					p.lead.font-secondary.text-darker-clr Q. Can I offer my items for free on a promotional basis?
+					p.heading-6.letter-spacing-null.font-base.text-base.inset-1.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			.row.section-border.well#q5
+				.col-12
+					p.lead.font-secondary.text-darker-clr Q. An Introduction to the Marketplaces for Authors
+					p.heading-6.letter-spacing-null.font-base.text-base.inset-1.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	//End section
+
+
+
+block footer
+	-var footer_class = "page-footer footer-centered text-center"
+	include ../includes/_footer_centered
